@@ -34,9 +34,9 @@
 
       <!-- Si case cochée, afficher le choix des jours -->
       <section id="pass2joursDate">
-        <input type="checkbox" name="passSelection" id="choixJour12">
+        <input type="checkbox" name="passSelection" id="choixJour1">
         <label for="choixJour1">Pass pour deux journées du 01/07 au 02/07</label>
-        <input type="checkbox" name="passSelection" id="choixJour23">
+        <input type="checkbox" name="passSelection" id="choixJour2">
         <label for="choixJour2">Pass pour deux journées du 02/07 au 03/07</label>
       </section>
 
