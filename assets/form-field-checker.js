@@ -35,7 +35,7 @@ function isNumberValid(number) {
 }
 
 // # Fields
-// Reservation Number Field
+// Nombre de réservations
 const reservationField = document.getElementById("NombrePlaces");
 reservationField.value = 1;
 let isReservationFieldValid = true;
@@ -58,7 +58,7 @@ reservationField.onchange = () => {
     }
 };
 
-// Noise reduction headphones field
+// Casques anti-bruit
 const noiseReductionField = document.getElementById("nombreCasquesEnfants");
 noiseReductionField.value = 0;
 let isNoiseReductionFieldValid = true;
@@ -82,7 +82,7 @@ noiseReductionField.onchange = () => {
     }
 };
 
-// Summer sled rides
+// Descentes en luge d'été
 const summerSledField = document.getElementById("NombreLugesEte");
 summerSledField.value = 0;
 let isSummerSledFieldValid = true;
