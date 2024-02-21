@@ -14,7 +14,9 @@
 </head>
 <body>
 <?php
+
 include './includes/header.php';
+
 ?>
   <form action="./src/traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
