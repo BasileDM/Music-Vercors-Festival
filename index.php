@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script src="../assets/script.js" defer></script>
   <title>Formulaire de réservation Music Vercos Festival</title>
 </head>
 <body>
@@ -16,7 +18,7 @@
       <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
 
       <h3>Choisissez votre formule :</h3>
-      <input type="checkbox" name="passSelection" id="pass1jour">
+      <input type="checkbox" name="passSelection" id="pass1jour" onclick="afficheChoixDuJour()">
       <label for="pass1jour">Pass 1 jour : 40€</label>
 
       <!-- Si case cochée, afficher le choix du jour -->
@@ -54,7 +56,7 @@
 
       <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
 
-      <p class="bouton" onclick="suivant('option')">Suivant</p>
+      <p id="boutonReservation" class="bouton" onclick="suivant('option')">Suivant</p>
     </fieldset>
     <fieldset id="options">
       <legend>Options</legend>
@@ -94,7 +96,7 @@
       <label for="NombreLugesEte">Nombre de descentes en luge d'été :</label>
       <input type="number" name="NombreLugesEte" id="NombreLugesEte">
 
-      <p class="bouton" onclick="suivant('coordonnees')">Suivant</p>
+      <p id="boutonOptions" class="bouton" onclick="suivant('coordonnees')">Suivant</p>
     </fieldset>
     <fieldset id="coordonnees">
       <legend>Coordonnées</legend>
