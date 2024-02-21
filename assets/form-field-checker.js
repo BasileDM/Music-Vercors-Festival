@@ -34,7 +34,7 @@ function isNumberValid(number) {
     }
 }
 
-// # Fields
+// # Fields section 1
 // Nombre de réservations
 const reservationField = document.getElementById("NombrePlaces");
 reservationField.value = 1;
@@ -57,6 +57,37 @@ reservationField.onchange = () => {
         isReservationFieldValid = validateField(reservationField);
     }
 };
+
+// Complete reservation section check
+const pass1jour = document.getElementById("pass1jour");
+const pass2jours = document.getElementById("pass2jours");
+const pass3jours = document.getElementById("pass3jours");
+const boutonReservation = document.getElementById("boutonReservation");
+
+// Hide next section button untill everything is validated
+checkIfPassIsSelected();
+function checkIfPassIsSelected() {
+    if (pass1jour.checked === true || pass2jours.checked === true  || pass3jours.checked === true) {
+        boutonReservation.style.display = "flex";
+        document.getElementById("nextSectionPlaceholder") ? document.getElementById("nextSectionPlaceholder").remove() : null;
+    } else {
+        boutonReservation.style.display = "none";
+        let nextSectionPlaceholder = document.createElement("p");
+        nextSectionPlaceholder.id = "nextSectionPlaceholder";
+        nextSectionPlaceholder.innerHTML = "<p style='color: red;'>Veuillez selectionner une formule.</p>";
+        boutonReservation.parentNode.insertBefore(nextSectionPlaceholder, boutonReservation.nextSibling);
+    }
+}
+pass1jour.onchange = () => {
+    checkIfPassIsSelected();
+}
+pass2jours.onchange = () => {
+    checkIfPassIsSelected();
+}
+pass3jours.onchange = () => {
+    checkIfPassIsSelected();
+}
+
 
 // Casques anti-bruit
 const noiseReductionField = document.getElementById("nombreCasquesEnfants");
