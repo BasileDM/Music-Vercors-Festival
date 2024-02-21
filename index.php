@@ -1,3 +1,9 @@
+<?php
+
+include './includes/header.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,7 +18,7 @@
   <title>Formulaire de réservation Music Vercos Festival</title>
 </head>
 <body>
-  <form action="traitement.php" id="inscription" method="POST">
+  <form action="./src/traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>
       <h3>Nombre de réservation(s) :</h3>
@@ -22,7 +28,7 @@
       <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
 
       <h3>Choisissez votre formule :</h3>
-      <input type="checkbox" name="passSelection" id="pass1jour" onclick="afficheChoixDuJour()">
+      <input type="checkbox" name="passSelection" id="pass1jour" onclick="afficheChoixDesJours()">
       <label for="pass1jour">Pass 1 jour : 40€</label>
 
       <!-- Si case cochée, afficher le choix du jour -->
@@ -61,7 +67,7 @@
 
       <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
 
-      <p id="boutonReservation" class="bouton" onclick="suivant('option')">Suivant</p>
+      <p id="boutonReservation" class="bouton" onclick="suivant('options')">Suivant</p>
     </fieldset>
     <fieldset id="options">
       <legend>Options</legend>
@@ -97,8 +103,8 @@
         <p>*Dans la limite des stocks disponibles.</p>
       </section>
 
-      <h3>Profitez de descentes en luge d'été à tarifs avantageux !</h3>
-      <label for="NombreLugesEte">Nombre de descentes en luge d'été :</label>
+      <h3>Profitez de descentes en luge d'été à tarifs avantageux ! (5€ / descente)</h3>
+      <label for="NombreLugesEte">Nombre de descentes en luge d'été : </label>
       <input type="number" name="NombreLugesEte" id="NombreLugesEte">
 
       <p id="boutonOptions" class="bouton" onclick="suivant('coordonnees')">Suivant</p>
