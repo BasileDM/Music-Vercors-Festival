@@ -10,24 +10,47 @@ fieldsetCoordonnees.style.display = 'none';
 
 // afficher les choix du jour pour pass 1 jour 
 
-function afficheChoixDesJours() {
+function afficherChoixUnJour() {
     let boutonPassUnJour = document.getElementById('pass1jour');
     let choixUnJour = document.getElementById('pass1jourDate');
-    let boutonPassDeuxJours = document.getElementById('pass2jours');
-    let choixDeuxJours = documeny.getElementById('pass2joursDate');
 
     if (boutonPassUnJour.checked === true) {
+
         choixUnJour.style.display = 'block';
-    if (boutonPassDeuxJours.checked === true) {
-        choixDeuxJours.style.display = 'block';
-    
+        
     } else {
     choixUnJour.style.display = 'none';
-    choixDeuxJours.style.display = 'none';
+}
+}
 
+// afficher les choix des jours pour pass 2 jours
+
+function afficherChoixDeuxJours() {
+    let boutonPassDeuxJours = document.getElementById('pass2jours');
+    let choixDeuxJours = document.getElementById('pass2joursDate');
+
+    if (boutonPassDeuxJours.checked === true) {
+        choixDeuxJours.style.display = 'block';
+    } else {
+        choixDeuxJours.style.display = 'none';
 }
 }
+
+// afficher les tarif réduits
+
+function afficherTarifReduit() {
+    let boutonTarifReduit= document.getElementById('tarifReduit');
+    let sectiontarifReduit = document.getElementById('sectiontarifReduit');
+
+    if (boutonTarifReduit.checked === true) {
+        sectiontarifReduit.style.display = 'block';
+    } else {
+        sectiontarifReduit.style.display = 'none';
 }
+}
+
+// 
+
 
 // animation bouton suivant réservation, quand on clic sur suivant : affichage que de la section Options
 
@@ -48,6 +71,9 @@ function suivant(elementId) {
         elementAAfficher.style.display = 'block';
     }
 }
+
+
+
 
 //const boutonSuivantResevation = document.getElementById('boutonReservation');
 
