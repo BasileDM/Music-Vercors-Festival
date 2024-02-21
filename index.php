@@ -18,7 +18,7 @@ include './includes/header.php';
   <title>Formulaire de réservation Music Vercos Festival</title>
 </head>
 <body>
-  <form action="./src/traitement.php" id="inscription" method="POST" onsubmit="return checkForm()">
+  <form action="./src/traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>
       <h3>Nombre de réservation(s) :</h3>
