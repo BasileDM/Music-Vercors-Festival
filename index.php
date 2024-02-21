@@ -22,7 +22,7 @@
       <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
 
       <h3>Choisissez votre formule :</h3>
-      <input type="checkbox" name="passSelection" id="pass1jour" onclick="afficheChoixDuJour()">
+      <input type="checkbox" name="passSelection" id="pass1jour" onclick="afficheChoixDesJours()">
       <label for="pass1jour">Pass 1 jour : 40€</label>
 
       <!-- Si case cochée, afficher le choix du jour -->
@@ -61,7 +61,7 @@
 
       <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
 
-      <p id="boutonReservation" class="bouton" onclick="suivant('option')">Suivant</p>
+      <p id="boutonReservation" class="bouton" onclick="suivant('options')">Suivant</p>
     </fieldset>
     <fieldset id="options">
       <legend>Options</legend>

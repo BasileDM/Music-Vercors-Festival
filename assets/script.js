@@ -10,37 +10,64 @@ fieldsetCoordonnees.style.display = 'none';
 
 // afficher les choix du jour pour pass 1 jour 
 
-function afficheChoixDuJour() {
+function afficheChoixDesJours() {
     let boutonPassUnJour = document.getElementById('pass1jour');
-    let choixDuJour = document.getElementById('pass1jourDate');
+    let choixUnJour = document.getElementById('pass1jourDate');
+    let boutonPassDeuxJours = document.getElementById('pass2jours');
+    let choixDeuxJours = documeny.getElementById('pass2joursDate');
 
     if (boutonPassUnJour.checked === true) {
-        choixDuJour.style.display = 'block';
+        choixUnJour.style.display = 'block';
+    if (boutonPassDeuxJours.checked === true) {
+        choixDeuxJours.style.display = 'block';
+    
     } else {
-    choixDuJour.style.display = 'none';
-}
-}
+    choixUnJour.style.display = 'none';
+    choixDeuxJours.style.display = 'none';
 
+}
+}
+}
 
 // animation bouton suivant réservation, quand on clic sur suivant : affichage que de la section Options
 
-const boutonSuivantResevation = document.getElementById('boutonReservation');
+function suivant(elementId) {
+    let elementAAfficher = document.getElementById(elementId);
+
+    switch(elementId) {
+        case "options":
+            fieldsetReservation.style.display = "none";
+            break;
+        case "coordonnees":
+            fieldsetOptions.style.display = "none";
+            break;
+    }
+    if (elementId == "coordonnees") {
+        fieldsetCoordonnees.style.display = "flex";
+    } else {
+        elementAAfficher.style.display = 'block';
+    }
+}
+
+//const boutonSuivantResevation = document.getElementById('boutonReservation');
 
 
-boutonSuivantResevation.addEventListener('click', () => {
- fieldsetReservation.style.display = 'none';
- fieldsetOptions.style.display = 'block';
- fieldsetCoordonnees.style.display = 'none';
-});
+// boutonSuivantResevation.addEventListener('click', () => {
+//  fieldsetReservation.style.display = 'none';
+//  fieldsetOptions.style.display = 'block';
+//  fieldsetCoordonnees.style.display = 'none';
+// });
+
 
 // animation bouton suivant réservation, quand on clic sur suivant : affichage que de la section Coordonnées
 
-const boutonSuivantOptions = document.getElementById('boutonOptions');
 
-boutonSuivantOptions.addEventListener('click', () => {
-    fieldsetReservation.style.display = 'none';
-    fieldsetOptions.style.display = 'none';
-    fieldsetCoordonnees.style.display = 'block';
-})
+// const boutonSuivantOptions = document.getElementById('boutonOptions');
+
+// boutonSuivantOptions.addEventListener('click', () => {
+//     fieldsetReservation.style.display = 'none';
+//     fieldsetOptions.style.display = 'none';
+//     fieldsetCoordonnees.style.display = 'flex';
+// })
 
 
