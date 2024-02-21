@@ -1,3 +1,75 @@
+body {
+    background-image:url('images/1a669234843a563b2b6b977034b409f684fbad0c.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "PT Sans Narrow", sans-serif;
+}
+
+label, p {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+  }
+
+p {
+    font-style: italic;
+}
+
+label {
+    margin: 15px 29px 0 0;
+}
+  
+h3, h4 {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 22px;
+  }  
+
+legend {
+    position:absolute;
+    top:20px;
+    left:18px;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+fieldset {
+    position: relative;
+    border: 0;
+    border-radius: 5px;
+    margin: 2% 7%;
+    background-color: white;
+    padding: 5%;
+}
+
+#coordonnees {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+input[type="text" i], input[type="email" i] {
+    width: 60%;
+}
+
+.bouton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    font-style: normal;
+    font-weight: 700;
+    border: 1px;
+}
+
+input[type="submit" i] {
+    margin: 15px 0 0 0;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 30px;
+    background-color: white;
+}
+
 #pass1jourDate {
     display: none;
 }
