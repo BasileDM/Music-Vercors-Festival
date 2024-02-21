@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="./assets/form-field-checker.js" defer></script>
+  <script src="../assets/script.js" defer></script>
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
   <title>Formulaire de réservation Music Vercos Festival</title>
 </head>
 <body>
@@ -17,7 +22,7 @@
       <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
 
       <h3>Choisissez votre formule :</h3>
-      <input type="checkbox" name="passSelection" id="pass1jour">
+      <input type="checkbox" name="passSelection" id="pass1jour" onclick="afficheChoixDuJour()">
       <label for="pass1jour">Pass 1 jour : 40€</label>
 
       <!-- Si case cochée, afficher le choix du jour -->
@@ -26,6 +31,7 @@
         <label for="choixJour1">Pass pour la journée du 01/07</label>
         <input type="checkbox" name="passSelection" id="choixJour2">
         <label for="choixJour2">Pass pour la journée du 02/07</label>
+        <br>
         <input type="checkbox" name="passSelection" id="choixJour3">
         <label for="choixJour3">Pass pour la journée du 03/07</label>
       </section>
@@ -55,7 +61,7 @@
 
       <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
 
-      <p class="bouton" onclick="suivant('option')">Suivant</p>
+      <p id="boutonReservation" class="bouton" onclick="suivant('option')">Suivant</p>
     </fieldset>
     <fieldset id="options">
       <legend>Options</legend>
@@ -95,7 +101,7 @@
       <label for="NombreLugesEte">Nombre de descentes en luge d'été :</label>
       <input type="number" name="NombreLugesEte" id="NombreLugesEte">
 
-      <p class="bouton" onclick="suivant('coordonnees')">Suivant</p>
+      <p id="boutonOptions" class="bouton" onclick="suivant('coordonnees')">Suivant</p>
     </fieldset>
     <fieldset id="coordonnees">
       <legend>Coordonnées</legend>
