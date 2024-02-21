@@ -92,11 +92,11 @@ include './includes/header.php';
       <label for="van3Nuits">Pour les 3 nuits (12€)</label>
 
       <h3>Venez-vous avec des enfants ?</h3>
-      <input type="checkbox" name="enfantsOui"><label for="enfantsOui">Oui</label>
+      <input type="checkbox" id="enfantsOui" name="enfantsOui"><label for="enfantsOui">Oui</label>
       <input type="checkbox" name="enfantsNon"><label for="enfantsNon">Non</label>
 
       <!-- Si oui, afficher : -->
-      <section>
+      <section id="casques">
         <h4>Voulez-vous louer un casque antibruit pour enfants* (2€ / casque) ?</h4>
         <label for="nombreCasquesEnfants">Nombre de casques souhaités :</label>
         <input type="number" name="nombreCasquesEnfants" id="nombreCasquesEnfants">

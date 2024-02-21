@@ -3,10 +3,13 @@
 const fieldsetReservation = document.getElementById('reservation');
 const fieldsetOptions = document.getElementById('options');
 const fieldsetCoordonnees = document.getElementById('coordonnees');
+const sectionCasques = document.getElementById('casques');
 
 fieldsetReservation.style.display = 'block';
 fieldsetOptions.style.display = 'none';
 fieldsetCoordonnees.style.display = 'none';
+sectionCasques.style.display = 'none';
+
 
 // afficher les choix du jour pour pass 1 jour 
 
@@ -39,7 +42,7 @@ function afficherChoixDeuxJours() {
 // afficher les tarif réduits
 
 function afficherTarifReduit() {
-    let boutonTarifReduit= document.getElementById('tarifReduit');
+    let boutonTarifReduit = document.getElementById('tarifReduit');
     let sectiontarifReduit = document.getElementById('sectiontarifReduit');
 
     if (boutonTarifReduit.checked === true) {
@@ -49,7 +52,18 @@ function afficherTarifReduit() {
 }
 }
 
-// 
+// afficher casque pour enfant
+
+const boutonEnfantsOui = document.getElementById('enfantsOui');
+
+boutonEnfantsOui.addEventListener('change', (event) => {
+    
+    if (boutonEnfantsOui.checked === true) {
+        sectionCasques.style.display = 'block';
+    } else {
+        sectionCasques.style.display = 'none';
+    }
+})
 
 
 // animation bouton suivant réservation, quand on clic sur suivant : affichage que de la section Options
@@ -74,7 +88,7 @@ function suivant(elementId) {
 
 
 
-
+// bouton suivant en addEventListener :
 //const boutonSuivantResevation = document.getElementById('boutonReservation');
 
 
