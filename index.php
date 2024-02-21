@@ -1,8 +1,4 @@
-<?php
 
-include './includes/header.php';
-
-?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,6 +14,11 @@ include './includes/header.php';
   <title>Formulaire de réservation Music Vercos Festival</title>
 </head>
 <body>
+<?php
+
+include './includes/header.php';
+
+?>
   <form action="./src/traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>

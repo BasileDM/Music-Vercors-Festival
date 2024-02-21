@@ -6,6 +6,21 @@ body {
     font-family: "PT Sans Narrow", sans-serif;
 }
 
+header {
+    display: flex;
+    justify-content: space-around;
+}
+#logo {
+    max-width: 300px;
+    max-height: 200px;
+}
+
+#connexion {
+    height: 40px;
+    width: 90px;
+    font-size: 20px;
+}
+
 label, p {
     font-weight: 400;
     font-style: normal;
@@ -74,19 +89,3 @@ input[type="submit" i] {
     display: none;
 }
 
-header {
-    display: flex;
-    justify-content: space-around;
-}
-#logo {
-    max-width: 300px;
-    max-height: 200px;
-}
-
-#connexion {
-    height: 40px;
-    width: 90px;
-    font-size: 20px;
-    border-radius: 5px;
-
-}
