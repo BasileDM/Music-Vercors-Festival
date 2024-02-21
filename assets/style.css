@@ -74,6 +74,14 @@ input[type="submit" i] {
     display: none;
 }
 
+#pass2joursDate {
+    display: none;
+}
+
+#sectiontarifReduit {
+    display: none;
+}
+
 header {
     display: flex;
     justify-content: space-around;
