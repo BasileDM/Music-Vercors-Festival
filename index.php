@@ -1,3 +1,9 @@
+<?php
+
+include './includes/header.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,7 +18,7 @@
   <title>Formulaire de réservation Music Vercos Festival</title>
 </head>
 <body>
-  <form action="traitement.php" id="inscription" method="POST">
+  <form action="./src/traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>
       <h3>Nombre de réservation(s) :</h3>
@@ -97,8 +103,8 @@
         <p>*Dans la limite des stocks disponibles.</p>
       </section>
 
-      <h3>Profitez de descentes en luge d'été à tarifs avantageux !</h3>
-      <label for="NombreLugesEte">Nombre de descentes en luge d'été :</label>
+      <h3>Profitez de descentes en luge d'été à tarifs avantageux ! (5€ / descente)</h3>
+      <label for="NombreLugesEte">Nombre de descentes en luge d'été : </label>
       <input type="number" name="NombreLugesEte" id="NombreLugesEte">
 
       <p id="boutonOptions" class="bouton" onclick="suivant('coordonnees')">Suivant</p>
