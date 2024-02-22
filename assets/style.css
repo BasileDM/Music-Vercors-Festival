@@ -9,7 +9,14 @@ body {
 header {
     display: flex;
     justify-content: space-around;
+
+    .bouton {
+        /*insert a different background color (or other properties)
+        here for the header button*/
+        background-color: pink;
+    }
 }
+
 #logo {
     max-width: 300px;
     max-height: 200px;
@@ -64,25 +71,34 @@ fieldset {
     gap: 2px;
 }
 
-input[type="text" i], input[type="email" i] {
+input[type="text"], input[type="email"] {
     width: 60%;
 }
 
-.bouton {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: larger;
-    font-style: normal;
-    font-weight: 700;
-    border: 1px;
+input[type="checkbox"] {
+    accent-color: tomato;
 }
 
-input[type="submit" i] {
+input[type="submit"] {
     margin: 15px 0 0 0;
     font-family: "PT Sans Narrow", sans-serif;
     font-size: 30px;
     background-color: white;
+}
+
+.bouton {
+    width: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-style: normal;
+    font-weight: 700;
+    border: 1px solid black;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 #pass1jourDate {

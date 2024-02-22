@@ -5,6 +5,19 @@ const fieldsetOptions = document.getElementById('options');
 const fieldsetCoordonnees = document.getElementById('coordonnees');
 const sectionCasques = document.getElementById('casques');
 
+const boutonPassUnJour = document.getElementById('pass1jour');
+const labelPassUnJour = document.querySelector('label[for="pass1jour"]');
+const boutonUnJourReduit = document.getElementById('pass1jourreduit');
+const choixUnJour = document.getElementById('pass1jourDate');
+
+const boutonPassDeuxJours = document.getElementById('pass2jours');
+const labelPassDeuxJours = document.querySelector('label[for="pass2jours"]');
+const boutonDeuxJoursReduit = document.getElementById('pass2joursreduit');
+const choixDeuxJours = document.getElementById('pass2joursDate');
+
+const boutonPassTroisJours = document.getElementById('pass3jours');
+const labelPassTroisJours = document.querySelector('label[for="pass3jours"]');
+
 fieldsetReservation.style.display = 'block';
 fieldsetOptions.style.display = 'none';
 fieldsetCoordonnees.style.display = 'none';
@@ -14,10 +27,8 @@ sectionCasques.style.display = 'none';
 // afficher les choix du jour pour pass 1 jour 
 
 function afficherChoixUnJour() {
-    let boutonPassUnJour = document.getElementById('pass1jour');
-    let choixUnJour = document.getElementById('pass1jourDate');
 
-    if (boutonPassUnJour.checked === true) {
+    if (boutonPassUnJour.checked || boutonUnJourReduit.checked) {
 
         choixUnJour.style.display = 'block';
         
@@ -29,10 +40,8 @@ function afficherChoixUnJour() {
 // afficher les choix des jours pour pass 2 jours
 
 function afficherChoixDeuxJours() {
-    let boutonPassDeuxJours = document.getElementById('pass2jours');
-    let choixDeuxJours = document.getElementById('pass2joursDate');
 
-    if (boutonPassDeuxJours.checked === true) {
+    if (boutonPassDeuxJours.checked || boutonDeuxJoursReduit.checked) {
         choixDeuxJours.style.display = 'block';
     } else {
         choixDeuxJours.style.display = 'none';
@@ -45,10 +54,22 @@ function afficherTarifReduit() {
     let boutonTarifReduit = document.getElementById('tarifReduit');
     let sectiontarifReduit = document.getElementById('sectiontarifReduit');
 
-    if (boutonTarifReduit.checked === true) {
+    if (boutonTarifReduit.checked) {
         sectiontarifReduit.style.display = 'block';
+        boutonPassUnJour.style.display = 'none';
+        labelPassUnJour.style.display = 'none';
+        boutonPassDeuxJours.style.display = 'none';
+        labelPassDeuxJours.style.display = 'none';
+        boutonPassTroisJours.style.display = 'none';
+        labelPassTroisJours.style.display = 'none';
     } else {
         sectiontarifReduit.style.display = 'none';
+        boutonPassUnJour.style.display = 'inline';
+        labelPassUnJour.style.display = 'inline';
+        boutonPassDeuxJours.style.display = 'inline';
+        labelPassDeuxJours.style.display = 'inline';
+        boutonPassTroisJours.style.display = 'inline';
+        labelPassTroisJours.style.display = 'inline';
 }
 }
 
@@ -58,7 +79,7 @@ const boutonEnfantsOui = document.getElementById('enfantsOui');
 
 boutonEnfantsOui.addEventListener('change', (event) => {
     
-    if (boutonEnfantsOui.checked === true) {
+    if (boutonEnfantsOui.checked) {
         sectionCasques.style.display = 'block';
     } else {
         sectionCasques.style.display = 'none';
