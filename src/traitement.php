@@ -16,7 +16,7 @@ isset($_POST['adressePostale'])) {
     $min = 1;
     $max = 99;
 
-    if(filter_var($_POST['nombrePlaces'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>$min, "max_range"=>$max))) === true){
+    if(filter_var($_POST['nombrePlaces'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>$min, "max_range"=>$max)))){
         $nombrePlaces = ($_POST['nombrePlaces']);
         // echo("not good");
     } else {
@@ -25,7 +25,7 @@ isset($_POST['adressePostale'])) {
 exit;
     }
 
-    if(filter_var($_POST['nombreCasquesEnfants'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> $min, "max_range"=> $max))) === true){
+    if(filter_var($_POST['nombreCasquesEnfants'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> $min, "max_range"=> $max)))){
         
         $nombreCasquesEnfants = ($_POST['nombreCasquesEnfants']);
         // echo("not good");
