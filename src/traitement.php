@@ -12,6 +12,9 @@ isset($_POST['email']) &&
 isset($_POST['telephone']) && 
 isset($_POST['adressePostale'])) {
 
+
+    
+
 if(filter_var($_POST['nom'], FILTER_SANITIZE_FULL_SPECIAL_CHARS)) {
     $nom = ($_POST['nom']);
 } else {
