@@ -88,12 +88,24 @@ function afficherTarifReduit() {
 // afficher casque pour enfant
 
 const boutonEnfantsOui = document.getElementById("enfantsOui");
+const boutonEnfantsNon = document.getElementById("enfantsNon");
 
-boutonEnfantsOui.addEventListener("change", (event) => {
+boutonEnfantsNon.addEventListener("change", () => {
+    if (boutonEnfantsNon.checked) {
+        sectionCasques.style.display = "none";
+        document.getElementById("nombreCasquesEnfants").value = 0;
+    } else {
+        sectionCasques.style.display = "block";
+        document.getElementById("nombreCasquesEnfants").value = 0;
+    }
+})
+boutonEnfantsOui.addEventListener("change", () => {
     if (boutonEnfantsOui.checked) {
         sectionCasques.style.display = "block";
+        document.getElementById("nombreCasquesEnfants").value = 0;
     } else {
         sectionCasques.style.display = "none";
+        document.getElementById("nombreCasquesEnfants").value = 0;
     }
 });
 

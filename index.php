@@ -71,7 +71,7 @@
 
       <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
 
-      <p id="boutonReservation" class="bouton" onclick="suivant('options')">Suivant</p>
+      <p id="boutonReservation" class="bouton" onclick="suivant('options'); checkIfSection2IsValid();">Suivant</p>
     </fieldset>
     <fieldset id="options">
       <legend>Options</legend>
@@ -96,8 +96,8 @@
       <label for="van3Nuits">Pour les 3 nuits (12€)</label>
 
       <h3>Venez-vous avec des enfants ?</h3>
-      <input type="radio" id="enfantsOui" name="enfantsOui"><label for="enfantsOui">Oui</label>
-      <input type="radio" name="enfantsNon"><label for="enfantsNon">Non</label>
+      <input type="radio" id="enfantsOui" name="enfants"><label for="enfantsOui">Oui</label>
+      <input type="radio" id="enfantsNon" name="enfants"><label for="enfantsNon">Non</label>
 
       <!-- Si oui, afficher : -->
       <section id="casques">
@@ -126,7 +126,7 @@
       <label for="adressePostale">Adresse Postale :</label>
       <input type="text" name="adressePostale" id="adressePostale" required>
 
-      <input type="submit" name="soumission" class="bouton" value="Réserver">
+      <input type="submit" name="soumission" class="bouton" value="Réserver" id="submitButton">
     </fieldset>
   </form>
 </body>
