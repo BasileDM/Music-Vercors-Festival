@@ -1,6 +1,6 @@
 <?php
 
-require ''
+require './config.php';
 require 'classes/Database.php';
 
 if(isset($_POST['nombrePlaces']) && 
@@ -37,7 +37,7 @@ if(filter_var($_POST['adressePostale'], FILTER_VALIDATE_INT)) {
 };
 
 
-var_dump($_POST['telephone']);
+var_dump($_POST);
 
 
 ?>
