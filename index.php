@@ -1,3 +1,11 @@
+<?php
+
+$errorCode = null;
+if(isset($_GET['error'])) {
+  $errorCode = (int) $_GET['error'];
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
