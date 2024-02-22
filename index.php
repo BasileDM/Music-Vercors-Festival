@@ -33,6 +33,9 @@ if(isset($_GET['error'])) {
       <legend>Réservation</legend>
       <h3>Nombre de réservation(s) :</h3>
       <input type="number" name="nombrePlaces" id="NombrePlaces" value="1" required>
+      <?php if($errorCode === 1) { ?>
+      <div class= "message error">Le nombre de places n'est pas valide.</div>
+    <?php } ?>
       <h3>Réservation(s) en tarif réduit</h3>
       <input type="checkbox" name="tarifReduit" id="tarifReduit" onclick="afficherTarifReduit()">
       <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
