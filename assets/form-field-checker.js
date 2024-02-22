@@ -53,8 +53,10 @@ reservationField.onchange = () => {
     ) {
         errorMessage = "Le nombre de places doit être compris entre " + minPlaces + " et " + maxPlaces + ".";
         isReservationFieldValid = displayError(reservationField, errorMessage);
+        checkIfEverythingIsValid();
     } else {
         isReservationFieldValid = validateField(reservationField);
+        checkIfEverythingIsValid();
     }
 };
 
@@ -78,28 +80,44 @@ const pass3joursreduit = document.getElementById("pass3joursreduit");
 const boutonReservation = document.getElementById("boutonReservation");
 
 // Hide next section button untill everything is validated
-checkIfPassIsSelected();
-function checkIfPassIsSelected() {
+function checkIfEverythingIsValid() {
     if (
-        pass1jour.checked === true ||
-        pass2jours.checked === true ||
-        pass3jours.checked === true ||
-        pass1jourreduit.checked === true ||
-        pass2joursreduit.checked === true ||
-        pass3joursreduit.checked === true
-    ) {
+    !choixJour1.checked &&
+    !choixJour2.checked &&
+    !choixJour3.checked &&
+    !choixJour12.checked &&
+    !choixJour23.checked &&
+    !pass3jours.checked &&
+    !pass3joursreduit.checked ||
+    !isReservationFieldValid
+    ) { 
+        boutonReservation.style.display = "none";
+        if (!document.querySelector(".error-message-reservation")) {
+            let nextSectionPlaceholder = document.createElement("p");
+            nextSectionPlaceholder.classList.add("error-message-reservation");
+            nextSectionPlaceholder.id = "nextSectionPlaceholder";
+            nextSectionPlaceholder.innerHTML = "<p style='color: red;'>Veuillez valider tous les champs.</p>";
+            boutonReservation.parentNode.insertBefore(nextSectionPlaceholder, boutonReservation.nextSibling);
+        }   
+    } else if (isReservationFieldValid) {
         boutonReservation.style.display = "flex";
         document.getElementById("nextSectionPlaceholder")
-            ? document.getElementById("nextSectionPlaceholder").remove()
-            : null;
-    } else {
-        boutonReservation.style.display = "none";
-        let nextSectionPlaceholder = document.createElement("p");
-        nextSectionPlaceholder.id = "nextSectionPlaceholder";
-        nextSectionPlaceholder.innerHTML = "<p style='color: red;'>Veuillez sélectionner une formule.</p>";
-        boutonReservation.parentNode.insertBefore(nextSectionPlaceholder, boutonReservation.nextSibling);
+        ? document.getElementById("nextSectionPlaceholder").remove()
+        : null;
+        
     }
 }
+
+checkIfEverythingIsValid();
+
+function uncheckEveryDay() {
+    choixJour1.checked = false;
+    choixJour2.checked = false;
+    choixJour3.checked = false;
+    choixJour12.checked = false;
+    choixJour23.checked = false;
+}
+
 tarifReduitCheckbox.onchange = () => {
     pass1jour.checked = false;
     pass2jours.checked = false;
@@ -107,35 +125,47 @@ tarifReduitCheckbox.onchange = () => {
     pass1jourreduit.checked = false;
     pass2joursreduit.checked = false;
     pass3joursreduit.checked = false;
-    choixJour1.checked = false;
-    choixJour2.checked = false;
-    choixJour3.checked = false;
-    choixJour12.checked = false;
-    choixJour23.checked = false;
+    uncheckEveryDay();
+    checkIfEverythingIsValid();
 }
 pass1jour.onchange = () => {
-    choixJour1.checked = false;
-    choixJour2.checked = false;
-    choixJour3.checked = false;
+    uncheckEveryDay();
+    checkIfEverythingIsValid();
 };
 pass2jours.onchange = () => {
-    choixJour12.checked = false;
-    choixJour23.checked = false;
+    uncheckEveryDay();
+    checkIfEverythingIsValid();
 };
 pass3jours.onchange = () => {
-    checkIfPassIsSelected();
+    uncheckEveryDay();
+    checkIfEverythingIsValid();
 }
 pass1jourreduit.onchange = () => {
-    choixJour1.checked = false;
-    choixJour2.checked = false;
-    choixJour3.checked = false;
+    uncheckEveryDay();
+    checkIfEverythingIsValid();
 }
 pass2joursreduit.onchange = () => {
-    choixJour12.checked = false;
-    choixJour23.checked = false;
+    uncheckEveryDay();
+    checkIfEverythingIsValid();
 }
 pass3joursreduit.onchange = () => {
-    checkIfPassIsSelected();
+    uncheckEveryDay();
+    checkIfEverythingIsValid();
+}
+choixJour1.onchange = () => {
+    checkIfEverythingIsValid();
+}
+choixJour2.onchange = () => {
+    checkIfEverythingIsValid();
+}
+choixJour3.onchange = () => {
+    checkIfEverythingIsValid();
+}
+choixJour12.onchange = () => {
+    checkIfEverythingIsValid();
+}
+choixJour23.onchange = () => {
+    checkIfEverythingIsValid();
 }
 
 // Casques anti-bruit

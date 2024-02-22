@@ -9,23 +9,25 @@ if(isset($_GET['error'])) {
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="./assets/form-field-checker.js" defer></script>
-  <script src="../assets/script.js" defer></script>
+  <script src="../assets/section-display.js" defer></script>
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
   <title>Formulaire de réservation Music Vercos Festival</title>
 </head>
+
 <body>
-<?php
+  <?php
 
-include './includes/header.php';
+  include './includes/header.php';
 
-?>
+  ?>
   <form action="./src/traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>
@@ -36,7 +38,18 @@ include './includes/header.php';
       <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
 
       <h3>Choisissez votre formule :</h3>
-      <input type="checKBox" name="passSelection" id="pass1jour" onclick="afficherChoixUnJour()">
+
+      <!-- tarifs réduits : à n'afficher que si tarif réduit est sélectionné -->
+      <section id="sectiontarifReduit">
+        <input type="radio" name="passSelection" id="pass1jourreduit" onclick="afficherChoixUnJour()">
+        <label for="pass1jourreduit">Pass 1 jour : 25€</label>
+        <input type="radio" name="passSelection" id="pass2joursreduit" onclick="afficherChoixDeuxJours()">
+        <label for="pass2joursreduit">Pass 2 jours : 50€</label>
+        <input type="radio" name="passSelection" id="pass3joursreduit" onclick="afficherChoixTroisJours()">
+        <label for="pass3joursreduit">Pass 3 jours : 65€</label>
+      </section>
+
+      <input type="radio" name="passSelection" id="pass1jour" onclick="afficherChoixUnJour()">
       <label for="pass1jour">Pass 1 jour : 40€</label>
 
       <!-- Si case cochée, afficher le choix du jour -->
@@ -50,7 +63,7 @@ include './includes/header.php';
         <label for="choixJour3">Pass pour la journée du 03/07</label>
       </section>
 
-      <input type="checkbox" name="passSelection" id="pass2jours" onclick="afficherChoixDeuxJours()">
+      <input type="radio" name="passSelection" id="pass2jours" onclick="afficherChoixDeuxJours()">
       <label for="pass2jours">Pass 2 jours : 70€</label>
 
       <!-- Si case cochée, afficher le choix des jours -->
@@ -61,19 +74,9 @@ include './includes/header.php';
         <label for="choixJour23">Pass pour deux journées du 02/07 au 03/07</label>
       </section>
 
-      <input type="checkbox" name="passSelection" id="pass3jours">
+      <input type="radio" name="passSelection" id="pass3jours" onclick="afficherChoixTroisJours()">
       <label for="pass3jours">Pass 3 jours : 100€</label>
 
-
-      <!-- tarifs réduits : à n'afficher que si tarif réduit est sélectionné -->
-    <section id="sectiontarifReduit">
-      <input type="checkbox" name="passSelection" id="pass1jourreduit" onclick="afficherChoixUnJour()">
-      <label for="pass1jourreduit">Pass 1 jour : 25€</label>
-      <input type="checkbox" name="passSelection" id="pass2joursreduit" onclick="afficherChoixDeuxJours()">
-      <label for="pass2joursreduit">Pass 2 jours : 50€</label>
-      <input type="checkbox" name="passSelection" id="pass3joursreduit">
-      <label for="pass3joursreduit">Pass 3 jours : 65€</label>
-    </section>
 
       <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
 
@@ -102,8 +105,8 @@ include './includes/header.php';
       <label for="van3Nuits">Pour les 3 nuits (12€)</label>
 
       <h3>Venez-vous avec des enfants ?</h3>
-      <input type="checkbox" id="enfantsOui" name="enfantsOui"><label for="enfantsOui">Oui</label>
-      <input type="checkbox" name="enfantsNon"><label for="enfantsNon">Non</label>
+      <input type="radio" id="enfantsOui" name="enfantsOui"><label for="enfantsOui">Oui</label>
+      <input type="radio" name="enfantsNon"><label for="enfantsNon">Non</label>
 
       <!-- Si oui, afficher : -->
       <section id="casques">
@@ -121,19 +124,20 @@ include './includes/header.php';
     </fieldset>
     <fieldset id="coordonnees">
       <legend>Coordonnées</legend>
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" id="nom" required>
-        <label for="prenom">Prénom :</label>
-        <input type="text" name="prenom" id="prenom" required>
-        <label for="email">Email :</label>
-        <input type="email" name="email" id="email" required>
-        <label for="telephone">Téléphone :</label>
-        <input type="text" name="telephone" id="telephone" required>
-        <label for="adressePostale">Adresse Postale :</label>
-        <input type="text" name="adressePostale" id="adressePostale" required>
+      <label for="nom">Nom :</label>
+      <input type="text" name="nom" id="nom" required>
+      <label for="prenom">Prénom :</label>
+      <input type="text" name="prenom" id="prenom" required>
+      <label for="email">Email :</label>
+      <input type="email" name="email" id="email" required>
+      <label for="telephone">Téléphone :</label>
+      <input type="text" name="telephone" id="telephone" required>
+      <label for="adressePostale">Adresse Postale :</label>
+      <input type="text" name="adressePostale" id="adressePostale" required>
 
-        <input type="submit" name="soumission" class="bouton" value="Réserver">
+      <input type="submit" name="soumission" class="bouton" value="Réserver">
     </fieldset>
   </form>
 </body>
+
 </html>
