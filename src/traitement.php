@@ -56,7 +56,7 @@ isset($_POST['adressePostale'])) {
     }
     };
 
-var_dump($nombrePlaces);
+var_dump($nom);
 
 
 ?>
