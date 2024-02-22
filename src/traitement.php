@@ -12,8 +12,17 @@ isset($_POST['email']) &&
 isset($_POST['telephone']) && 
 isset($_POST['adressePostale'])) {
 
-    $nom = htmlspecialchars($_POST['nom']);
-    $prenom = htmlspecialchars($_POST['prenom']);
+if(filter_var($_POST['nom'], FILTER_SANITIZE_FULL_SPECIAL_CHARS)) {
+    $nom = ($_POST['nom']);
+} else {
+    header('location:../index.php?error='.ERROR_EMPTY_FIELD);
+}
+
+if(filter_var($_POST['prenom'], FILTER_SANITIZE_FULL_SPECIAL_CHARS)) {
+    $nom = ($_POST['prenom']);
+} else {
+
+}
 
 
 if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
