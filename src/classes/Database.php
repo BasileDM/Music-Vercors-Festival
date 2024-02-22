@@ -4,11 +4,11 @@ class Database{
     private $_DataBase;
   
     public function __construct(){
-      $this->_DataBase = '';
+      $this->_DataBase = '../csv/database.csv';
     }
 
-public function getDataFromFormulaire() {
+  public function getAllReservations() {
 
-}
+  }
 }
 ?>
