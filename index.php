@@ -28,7 +28,7 @@ if(isset($_GET['error'])) {
   include './includes/header.php';
 
   ?>
-  <form action="./src/traitement.php" id="inscription" method="POST">
+  <form onsubmit="return finalCheck(event)" action="./src/traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>
       <h3>Nombre de réservation(s) :</h3>
