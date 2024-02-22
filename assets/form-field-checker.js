@@ -289,15 +289,15 @@ function checkIfSection3IsValid() {
         : null;
     }
 }
-lastNameField.onchange = () => {
-    lastNameField.value = lastNameField.value.trim();
-    if (isStringInvalid(lastNameField.value) 
-        || lastNameField.value.length < 2 
-        || lastNameField.value.length > 50) {
-        errorMessage = "Veuillez renseigner un nom valide.";
-        islastNameValid = displayError(lastNameField, errorMessage);
-    }
-}
+// lastNameField.onchange = () => {
+//     lastNameField.value = lastNameField.value.trim();
+//     if (isStringInvalid(lastNameField.value) 
+//         || lastNameField.value.length < 2 
+//         || lastNameField.value.length > 50) {
+//         errorMessage = "Veuillez renseigner un nom valide.";
+//         islastNameValid = displayError(lastNameField, errorMessage);
+//     }
+// }
 
-checkIfSection3IsValid();
+// checkIfSection3IsValid();
 //#endregion
