@@ -2,7 +2,7 @@ let errorMessage;
 //#region General functions
 // Display error, stylize the field and return false
 function displayError(field, errorMessage, borderBool = true) {
-    borderBool ? field.style.border = "2px solid red" : null;
+    borderBool ? (field.style.border = "2px solid red") : null;
 
     if (!document.querySelector(".error-message-" + field.id)) {
         const error = document.createElement("p");
@@ -18,7 +18,7 @@ function displayError(field, errorMessage, borderBool = true) {
 
 // Validate field, stylize the field and return true
 function validateField(field, borderBool = true) {
-    borderBool ? field.style.border = "2px solid green" : null;
+    borderBool ? (field.style.border = "2px solid green") : null;
     if (document.querySelector(".error-message-" + field.id))
         document.querySelector(".error-message-" + field.id).remove();
     return true;
@@ -57,15 +57,15 @@ const boutonReservation = document.getElementById("boutonReservation");
 // Hide next section button untill everything is validated
 function checkIfSection1IsValid() {
     if (
-    !choixJour1.checked &&
-    !choixJour2.checked &&
-    !choixJour3.checked &&
-    !choixJour12.checked &&
-    !choixJour23.checked &&
-    !pass3jours.checked &&
-    !pass3joursreduit.checked ||
-    !isReservationFieldValid
-    ) { 
+        (!choixJour1.checked &&
+            !choixJour2.checked &&
+            !choixJour3.checked &&
+            !choixJour12.checked &&
+            !choixJour23.checked &&
+            !pass3jours.checked &&
+            !pass3joursreduit.checked) ||
+        !isReservationFieldValid
+    ) {
         boutonReservation.style.display = "none";
         if (!document.querySelector(".error-message-reservation")) {
             let nextSectionPlaceholder = document.createElement("p");
@@ -73,13 +73,12 @@ function checkIfSection1IsValid() {
             nextSectionPlaceholder.id = "nextSectionPlaceholder";
             nextSectionPlaceholder.innerHTML = "<p style='color: red;'>Veuillez valider les champs requis.</p>";
             boutonReservation.parentNode.insertBefore(nextSectionPlaceholder, boutonReservation.nextSibling);
-        }   
+        }
     } else if (isReservationFieldValid) {
         boutonReservation.style.display = "flex";
         document.getElementById("nextSectionPlaceholder")
-        ? document.getElementById("nextSectionPlaceholder").remove()
-        : null;
-        
+            ? document.getElementById("nextSectionPlaceholder").remove()
+            : null;
     }
 }
 
@@ -124,7 +123,7 @@ tarifReduitCheckbox.onchange = () => {
     pass3joursreduit.checked = false;
     uncheckEveryDay();
     checkIfSection1IsValid();
-}
+};
 pass1jour.onchange = () => {
     uncheckEveryDay();
     checkIfSection1IsValid();
@@ -136,35 +135,34 @@ pass2jours.onchange = () => {
 pass3jours.onchange = () => {
     uncheckEveryDay();
     checkIfSection1IsValid();
-}
+};
 pass1jourreduit.onchange = () => {
     uncheckEveryDay();
     checkIfSection1IsValid();
-}
+};
 pass2joursreduit.onchange = () => {
     uncheckEveryDay();
     checkIfSection1IsValid();
-}
+};
 pass3joursreduit.onchange = () => {
     uncheckEveryDay();
     checkIfSection1IsValid();
-}
+};
 choixJour1.onchange = () => {
     checkIfSection1IsValid();
-}
+};
 choixJour2.onchange = () => {
     checkIfSection1IsValid();
-}
+};
 choixJour3.onchange = () => {
     checkIfSection1IsValid();
-}
+};
 choixJour12.onchange = () => {
     checkIfSection1IsValid();
-}
+};
 choixJour23.onchange = () => {
     checkIfSection1IsValid();
-}
-
+};
 
 checkIfSection1IsValid();
 //#endregion
@@ -188,36 +186,44 @@ function checkIfSection2IsValid() {
             optionsSectionPlaceholder.id = "nextSectionPlaceholder";
             optionsSectionPlaceholder.innerHTML = "<p style='color: red;'>Veuillez valider les champs requis.</p>";
             boutonOptions.parentNode.insertBefore(optionsSectionPlaceholder, boutonOptions.nextSibling);
-        } 
+        }
     } else {
         boutonOptions.style.display = "flex";
         document.getElementById("nextSectionPlaceholder")
-        ? document.getElementById("nextSectionPlaceholder").remove()
-        : null;
+            ? document.getElementById("nextSectionPlaceholder").remove()
+            : null;
     }
 }
 let enfantsNonLabel = document.querySelector('label[for="enfantsNon"]');
 if (!enfantsCheckboxOui.checked || !enfantsCheckboxNon.checked) {
-   displayError(enfantsNonLabel, "Veuillez choisir une option pour les enfants.", false);
+    displayError(enfantsNonLabel, "Veuillez choisir une option pour les enfants.", false);
 } else {
     validateField(enfantsNonLabel, false);
 }
 // Enfants
 enfantsCheckboxOui.onchange = () => {
-    enfantsCheckboxOui.checked || enfantsCheckboxNon.checked ? 
-    isEnfantsCheckboxValid = validateField(enfantsNonLabel, false) : 
-    isEnfantsCheckboxValid = displayError(enfantsNonLabel, "Veuillez choisir une option pour les enfants.", false);
+    enfantsCheckboxOui.checked || enfantsCheckboxNon.checked
+        ? (isEnfantsCheckboxValid = validateField(enfantsNonLabel, false))
+        : (isEnfantsCheckboxValid = displayError(
+              enfantsNonLabel,
+              "Veuillez choisir une option pour les enfants.",
+              false
+          ));
     checkIfSection2IsValid();
-}
+};
 
 enfantsCheckboxNon.onchange = () => {
     noiseReductionField.value = 0;
     isNoiseReductionFieldValid = validateField(noiseReductionField);
-    enfantsCheckboxOui.checked || enfantsCheckboxNon.checked ? 
-    isEnfantsCheckboxValid = validateField(enfantsNonLabel, false) : 
-    isEnfantsCheckboxValid = displayError(enfantsNonLabel, "Veuillez choisir une option pour les enfants.", false);
+    enfantsCheckboxOui.checked || enfantsCheckboxNon.checked
+        ? (isEnfantsCheckboxValid = validateField(enfantsNonLabel, false))
+        : (isEnfantsCheckboxValid = displayError(
+              enfantsNonLabel,
+              "Veuillez choisir une option pour les enfants.",
+              false
+          ));
     checkIfSection2IsValid();
-}
+};
 
 // Casques anti-bruit
 noiseReductionField.value = 0;
@@ -249,7 +255,11 @@ summerSledField.setAttribute("max", 99);
 
 summerSledField.onchange = () => {
     summerSledField.value = Math.round(summerSledField.value);
-    if (isStringInvalid(summerSledField.value) || parseInt(summerSledField.value) < parseInt(summerSledField.min) || parseInt(summerSledField.value) > parseInt(summerSledField.max)) {
+    if (
+        isStringInvalid(summerSledField.value) ||
+        parseInt(summerSledField.value) < parseInt(summerSledField.min) ||
+        parseInt(summerSledField.value) > parseInt(summerSledField.max)
+    ) {
         errorMessage = "Le nombre de descentes doit être compris entre 0 et 99.";
         isSummerSledFieldValid = displayError(summerSledField, errorMessage);
     } else {
@@ -270,10 +280,10 @@ let islastNameValid = false;
 let isFirstNameValid = false;
 let isEmailValid = false;
 let isPhoneValid = false;
-let isAdressValid = false;
+let isAddressValid = false;
 
 function checkIfSection3IsValid() {
-    if (!islastNameValid || !isFirstNameValid || !isEmailValid || !isPhoneValid || !isAdressValid) {
+    if (!islastNameValid || !isFirstNameValid || !isEmailValid || !isPhoneValid || !isAddressValid) {
         submitButton.style.display = "none";
         if (!document.querySelector(".error-message-submit")) {
             let submitSectionPlaceholder = document.createElement("p");
@@ -285,19 +295,111 @@ function checkIfSection3IsValid() {
     } else {
         submitButton.style.display = "flex";
         document.getElementById("nextSectionPlaceholder")
-        ? document.getElementById("nextSectionPlaceholder").remove()
-        : null;
+            ? document.getElementById("nextSectionPlaceholder").remove()
+            : null;
     }
 }
-// lastNameField.onchange = () => {
-//     lastNameField.value = lastNameField.value.trim();
-//     if (isStringInvalid(lastNameField.value) 
-//         || lastNameField.value.length < 2 
-//         || lastNameField.value.length > 50) {
-//         errorMessage = "Veuillez renseigner un nom valide.";
-//         islastNameValid = displayError(lastNameField, errorMessage);
-//     }
-// }
+lastNameField.onchange = () => {
+    lastNameField.value = lastNameField.value.replace(/6/g, "-").replace(/[^a-zA-Z\-ç\u00E0-\u00FF]/g, "");
+    lastNameField.value = lastNameField.value.trim();
+    lastNameField.value = lastNameField.value.charAt(0).toUpperCase() + lastNameField.value.slice(1).toLowerCase();
+    lastNameField.value = lastNameField.value.replace(/\-(\w)/g, function (match, group1) {
+        return "-" + group1.toUpperCase();
+    });
+    if (isStringInvalid(lastNameField.value) || lastNameField.value.length < 2 || lastNameField.value.length > 50) {
+        errorMessage = "Veuillez renseigner un nom valide.";
+        islastNameValid = displayError(lastNameField, errorMessage);
+    } else {
+        islastNameValid = validateField(lastNameField);
+    }
+    checkIfSection3IsValid();
+};
 
-// checkIfSection3IsValid();
+firstNameField.onchange = () => {
+    firstNameField.value = firstNameField.value.replace(/6/g, "-").replace(/[^a-zA-Z\-ç\u00E0-\u00FF]/g, "");
+    firstNameField.value = firstNameField.value.trim();
+    firstNameField.value = firstNameField.value.charAt(0).toUpperCase() + firstNameField.value.slice(1).toLowerCase();
+    firstNameField.value = firstNameField.value.replace(/\-(\w)/g, function (match, group1) {
+        return "-" + group1.toUpperCase();
+    });
+    if (isStringInvalid(firstNameField.value) || firstNameField.value.length < 2 || firstNameField.value.length > 50) {
+        errorMessage = "Veuillez renseigner un prenom valide.";
+        isFirstNameValid = displayError(firstNameField, errorMessage);
+    } else {
+        isFirstNameValid = validateField(firstNameField);
+    }
+    checkIfSection3IsValid();
+};
+
+emailField.onchange = () => {
+    emailField.value = emailField.value.replace(/[^a-zA-Z0-9\.\-\_@]/g, "");
+    emailField.value = emailField.value.trim();
+    emailField.value = emailField.value.toLowerCase();
+    // verify if email actually has a email format
+    const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!regex.test(String(emailField.value)) 
+    || emailField.value.length < 3 
+    || emailField.value.length > 50 
+    || isStringInvalid(emailField.value)) {
+        errorMessage = "Veuillez renseigner une adresse email valide.";
+        isEmailValid = displayError(emailField, errorMessage);
+    } else {
+        isEmailValid = validateField(emailField);
+    }
+    checkIfSection3IsValid();
+}
+
+phoneField.onchange = () => {
+    phoneField.value = phoneField.value.replace(/[^0-9+]/g, "");
+    phoneField.value = phoneField.value.trim();
+    if (phoneField.value.length <= 12 && phoneField.value.length >= 10 && !isStringInvalid(phoneField.value)) {
+        const regex = /^[+](\d{3})\)?(\d{3})(\d{5,6})$|^(\d{10,10})$/; 
+        if (regex.test(phoneField.value)) {
+            isPhoneValid = validateField(phoneField);
+        } else {
+            errorMessage = "Veuillez renseigner un numéro de téléphone valide.";
+            isPhoneValid = displayError(phoneField, errorMessage);
+        }
+    } else {
+        errorMessage = "Veuillez renseigner un numéro de téléphone valide.";
+        isPhoneValid = displayError(phoneField, errorMessage);
+    }
+    checkIfSection3IsValid();
+}
+
+addressField.onchange = () => {
+    addressField.value = addressField.value.replace(/6/g, "-").replace(/[^a-zA-Z\-ç\u00E0-\u00FF]/g, "");
+    addressField.value = addressField.value.trim();
+    addressField.value = addressField.value.charAt(0).toUpperCase() + addressField.value.slice(1).toLowerCase();
+    addressField.value = addressField.value.replace(/\-(\w)/g, function (match, group1) {
+        return "-" + group1.toUpperCase();
+    })
+    if (isStringInvalid(addressField.value) || addressField.value.length < 2 || addressField.value.length > 50) {
+        errorMessage = "Veuillez renseigner une adresse valide.";
+        isAddressValid = displayError(addressField, errorMessage);
+    } else {
+        isAddressValid = validateField(addressField);
+    }
+    checkIfSection3IsValid();
+}
+
+checkIfSection3IsValid();
 //#endregion
+
+function finalCheck(event) {
+    if (
+        isReservationFieldValid
+        && isSummerSledFieldValid
+        && isEnfantsCheckboxValid
+        && isNoiseReductionFieldValid
+        && islastNameValid
+        && isFirstNameValid 
+        && isEmailValid 
+        && isPhoneValid
+        && isAddressValid
+        ) {
+        return true;
+    } else {
+        return false;
+    }
+}

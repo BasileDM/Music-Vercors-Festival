@@ -28,11 +28,14 @@ if(isset($_GET['error'])) {
   include './includes/header.php';
 
   ?>
-  <form action="./src/traitement.php" id="inscription" method="POST">
+  <form onsubmit="return finalCheck(event)" action="./src/traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>
       <h3>Nombre de réservation(s) :</h3>
       <input type="number" name="nombrePlaces" id="NombrePlaces" value="1" required>
+      <?php if($errorCode === 1) { ?>
+      <div class= "message error">Le nombre de places n'est pas valide.</div>
+    <?php } ?>
       <h3>Réservation(s) en tarif réduit</h3>
       <input type="checkbox" name="tarifReduit" id="tarifReduit" onclick="afficherTarifReduit()">
       <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
