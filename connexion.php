@@ -17,7 +17,7 @@
   <?php
 
   include './includes/header.php';
-  if (isset($_SESSION) && $_SESSION['connected']) {
+  if (isset($_SESSION['connected'])) {
     header('location:dashboard.php');
     exit;
   }

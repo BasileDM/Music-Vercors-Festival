@@ -1,21 +1,23 @@
 <?php
+require_once ('Reservation.php'); 
+
 class Database {
-  private $_DataBase;
+  private $_DBPath;
 
   public function __construct(){
-    $this->_DataBase = __DIR__ . '/../csv/reservations.csv';
+    $this->_DBPath = __DIR__ . '/../csv/reservations.csv';
   }
 
   public function getDatabase() : string {
-    return $this->_DataBase;
+    return $this->_DBPath;
   }
 
   public function setDatabase(string $database) {
-    $this->_DataBase = $database;
+    $this->_DBPath = $database;
   }
 
   public function getAllReservations(): array {
-    $connexion = fopen($this->_DataBase, 'r');
+    $connexion = fopen($this->_DBPath, 'r');
     $reservations = [];
 
     while (($reservation = fgetcsv($connexion, 1000, ",")) !== FALSE) {
@@ -26,7 +28,7 @@ class Database {
   }
 
   public function saveReservation(Reservation $reservation): bool {
-    $connexion = fopen($this->_DataBase, 'ab');
+    $connexion = fopen($this->_DBPath, 'ab');
     $retour = fputcsv($connexion, $reservation->getObjectToArray());
     fclose($connexion);
     return $retour;

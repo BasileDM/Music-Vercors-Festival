@@ -1,8 +1,8 @@
 <?php
 
-require './config.php';
-require './classes/Database.php';
-require './classes/Reservation.php';
+require_once './config.php';
+require_once './classes/Database.php';
+require_once './classes/Reservation.php';
 
 if(isset($_POST['nombrePlaces']) && 
 isset($_POST['nombreCasquesEnfants']) && 
@@ -19,7 +19,8 @@ isset($_POST['adressePostale'])) {
 
     if(filter_var($_POST['nombrePlaces'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>$min, "max_range"=>$max)))){
         $nombrePlaces = ($_POST['nombrePlaces']);
-    }else {
+        // echo("not good");
+    } else {
             header('location:../index?error='.ERROR_NUMBER_OF_PLACES);
     exit;
     }
@@ -44,8 +45,8 @@ isset($_POST['adressePostale'])) {
     exit;
     }
 
-    if(filter_var((int) $_POST['telephone'], FILTER_SANITIZE_NUMBER_INT)) {
-        $telephone = $_POST['telephone'];
+    if(filter_var($_POST['telephone'], FILTER_SANITIZE_NUMBER_INT)) {
+        $telephone = htmlspecialchars($_POST['telephone']);
     }else {
         header('location:../index.php?error='.ERROR_PHONE);
     exit;
@@ -55,7 +56,7 @@ isset($_POST['adressePostale'])) {
         $adressePostale = $_POST['adressePostale'];
     }else {
         header('location:../index.php?error='.ERROR_ADDRESS);
-    exit;
+        exit;
     }
     };
 
@@ -139,7 +140,7 @@ $newReservation = new Reservation(
     $nombrePlaces,
     $prixTotal,
     $date,
-    $_POST['nombreCasquesEnfants'],
+    $nombreCasquesEnfants, 
     $_POST['NombreLugesEte'],
     $_POST['tenteNuit1'] ?? null,
     $_POST['tenteNuit2'] ?? null,
