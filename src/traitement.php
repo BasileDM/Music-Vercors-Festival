@@ -19,7 +19,7 @@ isset($_POST['adressePostale'])) {
 
     if(filter_var($_POST['nombrePlaces'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>$min, "max_range"=>$max)))){
         $nombrePlaces = ($_POST['nombrePlaces']);
-        // echo("not good");
+        // echo("good");
     } else {
             header('location:../index?error='.ERROR_NUMBER_OF_PLACES);
             // echo("good");
@@ -48,19 +48,17 @@ exit;
         exit;
     }
 
-    if(filter_var((int) $_POST['telephone'], FILTER_SANITIZE_NUMBER_INT)) {
-        $telephone = $_POST['telephone'];
+    if(filter_var($_POST['telephone'], FILTER_SANITIZE_NUMBER_INT)) {
+        $telephone = htmlspecialchars($_POST['telephone']);
     }else {
         header('location:../index.php?error='.ERROR_PHONE);
         exit;
     }
 
-    if(filter_var($_POST['adressePostale'], FILTER_SANITIZE_FULL_SPECIAL_CHARS)) {
-        $adressePostale = $_POST['adressePostale'];
-    }else {
-        header('location:../index.php?error='.ERROR_ADDRESS);
-        exit;
-    }
+    
+        $adressePostale = htmlspecialchars($_POST['adressePostale']);
+    
+      
     };
 
 var_dump($_POST);
@@ -143,7 +141,7 @@ $newReservation = new Reservation(
     $nombrePlaces,
     $prixTotal,
     $date,
-    $_POST['nombreCasquesEnfants'],
+    $nombreCasquesEnfants, 
     $_POST['NombreLugesEte'],
     $_POST['tenteNuit1'] ?? null,
     $_POST['tenteNuit2'] ?? null,
