@@ -38,7 +38,7 @@ class Reservation {
         $this->_nbLugesEte = $nbLugesEte;
         $this->_tentenuit1 = $tentenuit1;
     }
-    //#region Getters and Setters
+ //#region Getters and Setters
     public function getNom(): string {
         return $this->_nom;
     }
