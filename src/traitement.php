@@ -166,7 +166,10 @@ $DB = new Database();
 $retour = $DB->saveReservation($newReservation);
 
 if ($retour) {
-    header('location:../receipt.php?nom=' . $newReservation->getNom() . '&prixTotal=' . $newReservation->getPrixTotal());
+    header('location:../receipt.php?nom=' 
+    . $newReservation->getNom() 
+    . '&prixTotal=' . $newReservation->getPrixTotal()
+    . '&date=' . $newReservation->getDate());
     die;
 } else {
     header('location:../index.php?error='.ERROR_DB);
