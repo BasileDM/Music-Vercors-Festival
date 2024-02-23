@@ -21,8 +21,8 @@ isset($_POST['adressePostale'])) {
         $nombrePlaces = ($_POST['nombrePlaces']);
         // echo("good");
     } else {
-            header('location:../index.php?error='.ERROR_NUMBER_OF_PLACES);
-            // echo("not good");
+            header('location:../index?error='.ERROR_NUMBER_OF_PLACES);
+            // echo("good");
 exit;
     }
 
@@ -159,13 +159,13 @@ $DB = new Database();
 $retour = $DB->saveReservation($newReservation);
 
 if ($retour) {
-    header('location:../receipt.php?nom=' 
+    header('location:../receipt?nom=' 
     . $newReservation->getNom() 
     . '&prixTotal=' . $newReservation->getPrixTotal()
     . '&date=' . $newReservation->getDate());
     die;
 } else {
-    header('location:../index.php?error='.ERROR_DB);
+    header('location:../index?error='.ERROR_DB);
 }
 
 ?>

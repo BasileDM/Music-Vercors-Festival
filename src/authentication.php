@@ -4,18 +4,18 @@
     if (isset($_POST['soumission'])) {
         $password = $_POST['password'];
     } else {
-        header('location:../index.php');
+        header('location:../index');
         exit;
     }
 
     if ($password === 'vercors') {
         session_start();
-        $_SESSION['connecté'] = true;
-        $_SESSION['user'] = 'vercors';
-        header('location:../dashboard.php');
+        $_SESSION['connected'] = true;
+        $_SESSION['user'] = 'admin';
+        header('location:../dashboard');
         exit;
     } else {
-        header('location:./connexion.php?error='.ERROR_PASSWORD);
+        header('location:../connexion?error='.ERROR_PASSWORD);
         exit;
     }
 ?>
