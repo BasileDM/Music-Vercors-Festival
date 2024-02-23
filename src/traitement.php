@@ -29,42 +29,37 @@ exit;
     if(filter_var($_POST['nombreCasquesEnfants'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> 0, "max_range"=> $max))) || $_POST['nombreCasquesEnfants'] === '0') {
         
         $nombreCasquesEnfants = ($_POST['nombreCasquesEnfants']);
-        // echo("not good");
+        
     } else {
-        header('location:../index?error='.ERROR_NUMBER_OF_HEADPHONES);
-                  // echo("good");
-                  exit;
-
+        header('location:../index.php?error='.ERROR_NUMBER_OF_HEADPHONES);
+                  
+        exit;
     }
 
-    if(filter_var($_POST['nom'], FILTER_SANITIZE_FULL_SPECIAL_CHARS)) {
-        $nom = ($_POST['nom']);
-    } else {
-        header('location:../index.php?error='.ERROR_EMPTY_FIELD);
-    }
-
-    if(filter_var($_POST['prenom'], FILTER_SANITIZE_FULL_SPECIAL_CHARS)) {
-        $prenom = ($_POST['prenom']);
-    } else {
-        header('location:../index.php?error='.ERROR_EMPTY_FIELD);
-    }
+    
+        $nom = htmlspecialchars($_POST['nom']);
+        $prenom = htmlspecialchars($_POST['prenom']);
+   
 
     if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $email = htmlspecialchars($_POST['email']);
     } else {
         header('location:../index.php?error='.ERROR_EMAIL);
+        exit;
     }
 
     if(filter_var($_POST['telephone'], FILTER_SANITIZE_NUMBER_INT)) {
         $telephone = $_POST['telephone'];
     }else {
         header('location:../index.php?error='.ERROR_PHONE);
+        exit;
     }
 
     if(filter_var($_POST['adressePostale'], FILTER_SANITIZE_FULL_SPECIAL_CHARS)) {
         $adressePostale = $_POST['adressePostale'];
     }else {
         header('location:../index.php?error='.ERROR_ADDRESS);
+        exit;
     }
     };
 
