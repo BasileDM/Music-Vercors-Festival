@@ -11,9 +11,21 @@ class Reservation {
     private $_date;
     private $_nbCasquesEnfants;
     private $_nbLugesEte;
+    private $_tentenuit1;
 
-    public function __construct(string $nom, string $prenom, string $mail, string $telephone, string $adresse, string $nbPersonnes, int $prixTotal, string $date, string $nbCasquesEnfants, string $nbLugesEte)
-    {
+    public function __construct(
+        string $nom,
+        string $prenom,
+        string $mail,
+        string $telephone,
+        string $adresse,
+        string $nbPersonnes,
+        int $prixTotal,
+        string $date,
+        string $nbCasquesEnfants,
+        string $nbLugesEte,
+        string $tentenuit1 = null
+    ) {
         $this->_nom = $nom;
         $this->_prenom = $prenom;
         $this->_mail = $mail;
@@ -24,9 +36,10 @@ class Reservation {
         $this->_date = $date;
         $this->_nbCasquesEnfants = $nbCasquesEnfants;
         $this->_nbLugesEte = $nbLugesEte;
+        $this->_tentenuit1 = $tentenuit1;
     }
-//#region Getters and Setters
-    public function getNom() : string {
+    //#region Getters and Setters
+    public function getNom(): string {
         return $this->_nom;
     }
 
@@ -34,7 +47,7 @@ class Reservation {
         $this->_nom = $nom;
     }
 
-    public function getPrenom() : string {
+    public function getPrenom(): string {
         return $this->_prenom;
     }
 
@@ -42,7 +55,7 @@ class Reservation {
         $this->_prenom = $prenom;
     }
 
-    public function getMail() : string {
+    public function getMail(): string {
         return $this->_mail;
     }
 
@@ -50,7 +63,7 @@ class Reservation {
         $this->_mail = $mail;
     }
 
-    public function getTelephone() : string {
+    public function getTelephone(): string {
         return $this->_telephone;
     }
 
@@ -58,7 +71,7 @@ class Reservation {
         $this->_telephone = $telephone;
     }
 
-    public function getAdresse() : string {
+    public function getAdresse(): string {
         return $this->_adresse;
     }
 
@@ -66,7 +79,7 @@ class Reservation {
         $this->_adresse = $adresse;
     }
 
-    public function getNbPersonnes() : int {
+    public function getNbPersonnes(): int {
         return $this->_nbPersonnes;
     }
 
@@ -74,7 +87,7 @@ class Reservation {
         $this->_nbPersonnes = $nbPersonnes;
     }
 
-    public function getDate() : string {
+    public function getDate(): string {
         return $this->_date;
     }
 
@@ -82,7 +95,7 @@ class Reservation {
         $this->_date = $date;
     }
 
-    public function getNbCasquesEnfants() : int {
+    public function getNbCasquesEnfants(): int {
         return $this->_nbCasquesEnfants;
     }
 
@@ -90,7 +103,7 @@ class Reservation {
         $this->_nbCasquesEnfants = $nbCasquesEnfants;
     }
 
-    public function getNbLugesEte() : int {
+    public function getNbLugesEte(): int {
         return $this->_nbLugesEte;
     }
 
@@ -98,14 +111,14 @@ class Reservation {
         $this->_nbLugesEte = $nbLugesEte;
     }
 
-    public function getPrixTotal() : int {
+    public function getPrixTotal(): int {
         return $this->_prixTotal;
     }
 
     public function setPrixTotal(int $prixTotal) {
         $this->_prixTotal = $prixTotal;
     }
-#endregion
+    #endregion
 
     public function getObjectToArray(): array {
         return [
@@ -121,5 +134,4 @@ class Reservation {
             "date" => $this->getDate()
         ];
     }
-
 }
