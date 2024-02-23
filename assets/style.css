@@ -6,6 +6,19 @@ body {
     font-family: "PT Sans Narrow", sans-serif;
 }
 
+@keyframes animation{
+    0%{
+        height: 0%;
+        width:0%;
+        /* position: relative; */
+        border: 0;
+    } 100%{
+        height: 400px;
+        width:400px;
+        
+    }
+}
+
 header {
     display: flex;
     justify-content: space-around;
@@ -57,13 +70,18 @@ legend {
 }
 
 fieldset {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 0;
     border-radius: 5px;
     margin: 2% 7%;
     background-color: white;
     padding: 5%;
+    animation: 2s ease-in animation;
 }
+
+
 
 #coordonnees {
     display: flex;
@@ -96,6 +114,7 @@ input[type="submit"] {
     font-weight: 700;
     border: 1px solid black;
     border-radius: 5px;
+    background-color: white;
     
     &:hover {
         cursor: pointer;
@@ -114,4 +133,7 @@ input[type="submit"] {
     display: none;
 }
 
-
+.messageError {
+    display: block;
+    color: red !important;
+}

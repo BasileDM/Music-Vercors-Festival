@@ -13,8 +13,8 @@ if(isset($_GET['error'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <script src="./assets/form-field-checker.js" defer></script>
-  <script src="../assets/section-display.js" defer></script> -->
+  <script src="./assets/form-field-checker.js" defer></script>
+  <script src="../assets/section-display.js" defer></script>
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@ if(isset($_GET['error'])) {
       <h3>Nombre de réservation(s) :</h3>
       <input type="number" name="nombrePlaces" id="NombrePlaces" value="1" required>
       <?php if($errorCode === 1) { ?>
-      <div class= "message error">Le nombre de places n'est pas valide.</div>
+      <div class= "messageError">Le nombre de places n'est pas valide.</div>
     <?php } ?>
       <h3>Réservation(s) en tarif réduit</h3>
       <input type="checkbox" name="tarifReduit" id="tarifReduit" onclick="afficherTarifReduit()">
@@ -115,13 +115,16 @@ if(isset($_GET['error'])) {
       <section id="casques">
         <h4>Voulez-vous louer un casque antibruit pour enfants* (2€ / casque) ?</h4>
         <label for="nombreCasquesEnfants">Nombre de casques souhaités :</label>
-        <input type="number" name="nombreCasquesEnfants" id="nombreCasquesEnfants">
+        <input type="number" name="nombreCasquesEnfants" id="nombreCasquesEnfants" value= '0'>
+        <?php if($errorCode === 2) { ?>
+          <div class= "messageError">Ajouter le nombre de casques.</div>
+    <?php } ?>
         <p>*Dans la limite des stocks disponibles.</p>
       </section>
 
       <h3>Profitez de descentes en luge d'été à tarifs avantageux ! (5€ / descente)</h3>
       <label for="NombreLugesEte">Nombre de descentes en luge d'été : </label>
-      <input type="number" name="NombreLugesEte" id="NombreLugesEte">
+      <input type="number" name="NombreLugesEte" id="NombreLugesEte" value='0'>
 
       <p id="boutonOptions" class="bouton" onclick="suivant('coordonnees')">Suivant</p>
     </fieldset>
@@ -133,11 +136,19 @@ if(isset($_GET['error'])) {
       <input type="text" name="prenom" id="prenom" required>
       <label for="email">Email :</label>
       <input type="email" name="email" id="email" required>
+      <?php if($errorCode === 4) { ?>
+          <div class= "message error">Saiser l'adresse mail.</div>
+    <?php } ?>
       <label for="telephone">Téléphone :</label>
       <input type="text" name="telephone" id="telephone" required>
+      <?php if($errorCode === 5) { ?>
+          <div class= "messageError">.</div>
+    <?php } ?>
       <label for="adressePostale">Adresse Postale :</label>
       <input type="text" name="adressePostale" id="adressePostale" required>
-
+      <?php if($errorCode === 6) { ?>
+          <div class= "messageError">Ajouter adresse postale.</div>
+    <?php } ?>
       <input type="submit" name="soumission" class="bouton" value="Réserver" id="submitButton">
     </fieldset>
   </form>
