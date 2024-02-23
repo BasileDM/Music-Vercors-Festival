@@ -15,7 +15,25 @@
 
 <body>
 <?php 
-    include './includes/header.php'; 
+    session_start();
+    include './includes/header.php';
+    include './includes/colonne.php';
+?>
+<?php 
+    if (isset($_GET['section'])) {
+        switch ($_GET['section']) {
+            case 'compte':
+                var_dump($_SESSION);
+                break;
+            case 'reservations':
+                echo 'reservations';
+                break;
+            default:
+                break;
+        } 
+    } else {
+        echo 'Bienvenue sur le tableau de bord.';
+    }
 ?>
 
 
