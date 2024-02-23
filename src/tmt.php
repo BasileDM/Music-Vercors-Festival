@@ -57,27 +57,43 @@ $prixTotal *= $_POST['nombrePlaces'];
 $prixTotal += $_POST['nombreCasquesEnfants'] * 2;
 $prixTotal += $_POST['NombreLugesEte'] * 5;
 
-echo $prixTotal;
+// Setting date to the right value according to the pass selection
+// 6 possible values : choixJour1, choixJour2, choixJour3, choixjour12, choixJour23, pass3jours
+if ($_POST['passSelection'] === 'pass1jour') {
+    $date = $_POST['pass1jour'];
+} elseif ($_POST['passSelection'] === 'pass2jours') {
+    $date = $_POST['pass2jours'];
+} elseif ($_POST['passSelection'] === 'pass3jours') {
+    $date = 'pass3jours';
+} elseif ($_POST['passSelection'] === 'pass1jourreduit') {
+    $date = $_POST['pass1jour'];
+} elseif ($_POST['passSelection'] === 'pass2joursreduit') {
+    $date = $_POST['pass2jours'];
+} elseif ($_POST['passSelection'] === 'pass3joursreduit') {
+    $date = 'pass3jours';
+}
 
-new Reservation(
+$newReservation = new Reservation(
     $_POST['nom'],
     $_POST['prenom'],
     $_POST['email'],
     $_POST['telephone'],
     $_POST['adressePostale'],
-    $_POST['passSelection'],
-    $_POST['tenteNuit1'],
-    $_POST['tenteNuit2'],
-    $_POST['tenteNuit3'],
-    $_POST['tente3Nuits'],
-    $_POST['vanNuit1'],
-    $_POST['vanNuit2'],
-    $_POST['vanNuit3'],
-    $_POST['van3Nuits'],
     $_POST['nombrePlaces'],
+    $prixTotal,
+    $date,
     $_POST['nombreCasquesEnfants'],
     $_POST['NombreLugesEte'],
-    $prixTotal
+    $_POST['tenteNuit1'] ?? null,
+    $_POST['tenteNuit2'] ?? null,
+    $_POST['tenteNuit3'] ?? null,
+    $_POST['tente3Nuits'] ?? null,
+    $_POST['vanNuit1'] ?? null,
+    $_POST['vanNuit2'] ?? null,
+    $_POST['vanNuit3'] ?? null,
+    $_POST['van3Nuits'] ?? null
 );
+
+var_dump($newReservation);
 
 ?>

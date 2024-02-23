@@ -1,6 +1,5 @@
 <?php
-class Reservation
-{
+class Reservation {
     // private $_ID;
     private $_nom;
     private $_prenom;
@@ -8,12 +7,12 @@ class Reservation
     private $_telephone;
     private $_adresse;
     private $_nbPersonnes;
+    private $_prixTotal;
     private $_date;
     private $_nbCasquesEnfants;
     private $_nbLugesEte;
-    private $_prixTotal;
 
-    public function __construct(string $nom, string $prenom, string $mail, string $telephone, string $adresse, string $nbPersonnes, string $date, string $nbCasquesEnfants, string $nbLugesEte, int $prixTotal)
+    public function __construct(string $nom, string $prenom, string $mail, string $telephone, string $adresse, string $nbPersonnes, int $prixTotal, string $date, string $nbCasquesEnfants, string $nbLugesEte)
     {
         $this->_nom = $nom;
         $this->_prenom = $prenom;
@@ -21,10 +20,10 @@ class Reservation
         $this->_telephone = $telephone;
         $this->_adresse = $adresse;
         $this->_nbPersonnes = $nbPersonnes;
+        $this->_prixTotal = $prixTotal;
         $this->_date = $date;
         $this->_nbCasquesEnfants = $nbCasquesEnfants;
         $this->_nbLugesEte = $nbLugesEte;
-        $this->_prixTotal = $prixTotal;
     }
 //#region Getters and Setters
     public function getNom() : string {
@@ -116,9 +115,10 @@ class Reservation
             "telephone" => $this->getTelephone(),
             "adresse" => $this->getAdresse(),
             "nbPersonnes" => $this->getNbPersonnes(),
-            "date" => $this->getDate(),
+            "prixTotal" => $this->getPrixTotal(),
             "nbCasquesEnfants" => $this->getNbCasquesEnfants(),
-            "nbLugesEte" => $this->getNbLugesEte()
+            "nbLugesEte" => $this->getNbLugesEte(),
+            "date" => $this->getDate()
         ];
     }
 
