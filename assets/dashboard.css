@@ -1,0 +1,39 @@
+#dashboard-container {
+    display: flex;
+    flex-direction: row;
+}
+#colonne {
+    display: flex;
+    background-color: #fff;
+    h2 {
+        width: 100%;
+    }
+
+    li {
+        list-style: none;
+    }
+    #compte-item {
+        cursor: pointer;
+
+        &:hover {
+            background-color: #eee;
+            border-radius: 10px;
+        }
+    }
+    #reservations-item {
+        cursor: pointer;
+
+        &:hover {
+            background-color: #eee;
+            border-radius: 10px;
+        }
+    }
+    .actif {
+        background-color: #eee;
+        border-radius: 10px;
+    }
+}
+#reservations-section, #account-section {
+    width: 100%;
+    text-align: center;
+}

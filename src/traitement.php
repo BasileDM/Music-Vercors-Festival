@@ -1,8 +1,8 @@
 <?php
 
-require './config.php';
-require './classes/Database.php';
-require './classes/Reservation.php';
+require_once './config.php';
+require_once './classes/Database.php';
+require_once './classes/Reservation.php';
 
 if(isset($_POST['nombrePlaces']) && 
 isset($_POST['nombreCasquesEnfants']) && 
