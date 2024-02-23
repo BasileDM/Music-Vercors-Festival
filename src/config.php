@@ -7,3 +7,6 @@ define('ERROR_EMPTY_FIELD', 3);
 define('ERROR_EMAIL', 4);
 define('ERROR_PHONE', 5);
 define('ERROR_ADDRESS', 6);
+define('ERROR_DB', 20);
+define('ERROR_PASSWORD', 21);
+
