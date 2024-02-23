@@ -48,7 +48,7 @@ exit;
         exit;
     }
 
-    if(filter_var($_POST['telephone'], FILTER_SANITIZE_NUMBER_INT)) {
+    if(filter_var((int) $_POST['telephone'], FILTER_SANITIZE_NUMBER_INT)) {
         $telephone = $_POST['telephone'];
     }else {
         header('location:../index.php?error='.ERROR_PHONE);
@@ -135,12 +135,12 @@ if ($_POST['passSelection'] === 'pass1jour') {
 }
 
 $newReservation = new Reservation(
-    $_POST['nom'],
-    $_POST['prenom'],
-    $_POST['email'],
-    $_POST['telephone'],
-    $_POST['adressePostale'],
-    $_POST['nombrePlaces'],
+    $nom,
+    $prenom,
+    $email,
+    $telephone,
+    $adressePostale,
+    $nombrePlaces,
     $prixTotal,
     $date,
     $_POST['nombreCasquesEnfants'],
