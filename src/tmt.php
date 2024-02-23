@@ -1,4 +1,7 @@
 <?php
+require './classes/Database.php';
+require './classes/Reservation.php';
+
 var_dump($_POST);
 
 $prixTotal = 0;
@@ -54,6 +57,27 @@ $prixTotal *= $_POST['nombrePlaces'];
 $prixTotal += $_POST['nombreCasquesEnfants'] * 2;
 $prixTotal += $_POST['NombreLugesEte'] * 5;
 
-
 echo $prixTotal;
+
+new Reservation(
+    $_POST['nom'],
+    $_POST['prenom'],
+    $_POST['email'],
+    $_POST['telephone'],
+    $_POST['adressePostale'],
+    $_POST['passSelection'],
+    $_POST['tenteNuit1'],
+    $_POST['tenteNuit2'],
+    $_POST['tenteNuit3'],
+    $_POST['tente3Nuits'],
+    $_POST['vanNuit1'],
+    $_POST['vanNuit2'],
+    $_POST['vanNuit3'],
+    $_POST['van3Nuits'],
+    $_POST['nombrePlaces'],
+    $_POST['nombreCasquesEnfants'],
+    $_POST['NombreLugesEte'],
+    $prixTotal
+);
+
 ?>
