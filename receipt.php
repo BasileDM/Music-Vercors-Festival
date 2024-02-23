@@ -22,30 +22,38 @@ require_once './src/classes/Database.php';
 include './includes/header.php';
 
 echo '<p>Votre réservation a bien été prise en compte.<br>
-    Merci de votre confiance ! <br>
+    Merci de votre confiance ! <br></p>';
+    
+
+echo '<p>Votre réservation: pour' . $_GET['$_nbPersonnes'] . 'personnes<br>
     Nom :' . $_GET['nom'] . '<br>
-    Prix Total :' . $_GET['prixTotal'] . '€<br></p>';
+    Prenom :' . $_GET['prenom'] . '<br></p>';
 
 switch ($_GET['date']) {
     case 'choixJour1':
-        echo '<p>Date : Le premier juillet</p>';
+        echo '<p>Date : Pass un jour, pour la journée du 01/07</p>';
         break;
     case 'choixJour2':
-        echo '<p>Date : Le deux juillet</p>';
+        echo '<p>Date : Pass un jour, pour la journée du 02/07</p>';
         break;
     case 'choixJour3':
-        echo '<p>Date : Le trois juillet</p>';
+        echo '<p>Date : Pass un jour, pour la journée du 03/07</p>';
         break;
     case 'choixjour12':
-        echo '<p>Date : Les deux journées du 01/07 au 02/07</p>';
+        echo '<p>Date : Pass deux jours, pour les journées du 01/07 au 02/07</p>';
         break;
     case 'choixJour23':
-        echo '<p>Date : Les deux journées du 02/07 au 03/07</p>';
+        echo '<p>Date : Pass deux jours, pour les journées du 02/07 au 03/07</p>';
         break;
     case 'pass3jours':
-        echo '<p>Date : Les trois journées du 01/07 au 03/07</p>';
+        echo '<p>Date : Pass trois jours du 01/07 au 03/07</p>';
         break;
 }
+
+echo '<p>Vous avez réservé' . $_GET['nbCasquesEnfants'] . "casques pour enfants<br>
+Vous avez réservé" . $_GET['nbLugesEte'] . 'descentes de luges<br></p>';
+
+echo '<p>Prix Total :' . $_GET['prixTotal'] . '€<br></p>';
 ?>
 </body>
 </html>

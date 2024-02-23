@@ -19,45 +19,46 @@ isset($_POST['adressePostale'])) {
 
     if(filter_var($_POST['nombrePlaces'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>$min, "max_range"=>$max)))){
         $nombrePlaces = ($_POST['nombrePlaces']);
-        // echo("not good");
+        // echo("good");
     } else {
             header('location:../index?error='.ERROR_NUMBER_OF_PLACES);
-    exit;
+            // echo("good");
+exit;
     }
 
     if(filter_var($_POST['nombreCasquesEnfants'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> 0, "max_range"=> $max))) || $_POST['nombreCasquesEnfants'] === '0') {
         
         $nombreCasquesEnfants = ($_POST['nombreCasquesEnfants']);
         
-    }else {
+    } else {
         header('location:../index.php?error='.ERROR_NUMBER_OF_HEADPHONES);
                   
-    exit;
+        exit;
     }
 
+    
         $nom = htmlspecialchars($_POST['nom']);
         $prenom = htmlspecialchars($_POST['prenom']);
    
+
     if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $email = htmlspecialchars($_POST['email']);
-    }else {
+    } else {
         header('location:../index.php?error='.ERROR_EMAIL);
-    exit;
+        exit;
     }
 
     if(filter_var($_POST['telephone'], FILTER_SANITIZE_NUMBER_INT)) {
         $telephone = htmlspecialchars($_POST['telephone']);
     }else {
         header('location:../index.php?error='.ERROR_PHONE);
-    exit;
-    }
-
-    if(filter_var($_POST['adressePostale'], FILTER_SANITIZE_FULL_SPECIAL_CHARS)) {
-        $adressePostale = $_POST['adressePostale'];
-    }else {
-        header('location:../index.php?error='.ERROR_ADDRESS);
         exit;
     }
+
+    
+        $adressePostale = htmlspecialchars($_POST['adressePostale']);
+    
+      
     };
 
 var_dump($_POST);
