@@ -1,5 +1,4 @@
 <?php
-
 $errorCode = null;
 if(isset($_GET['error'])) {
   $errorCode = (int) $_GET['error'];
@@ -13,8 +12,8 @@ if(isset($_GET['error'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <script src="./assets/form-field-checker.js" defer></script>
-  <script src="../assets/section-display.js" defer></script> -->
+  <script src="./assets/form-field-checker.js" defer></script>
+  <script src="../assets/section-display.js" defer></script>
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
