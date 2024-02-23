@@ -226,7 +226,7 @@ enfantsCheckboxNon.onchange = () => {
 };
 
 // Casques anti-bruit
-noiseReductionField.value = 0;
+noiseReductionField.value = '0';
 isNoiseReductionFieldValid = true;
 let headphonesStock = 42;
 noiseReductionField.setAttribute("min", 0);

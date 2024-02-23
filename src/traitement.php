@@ -26,7 +26,7 @@ isset($_POST['adressePostale'])) {
 exit;
     }
 
-    if(filter_var($_POST['nombreCasquesEnfants'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> $min, "max_range"=> $max)))){
+    if(filter_var($_POST['nombreCasquesEnfants'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> 0, "max_range"=> $max))) || $_POST['nombreCasquesEnfants'] === '0') {
         
         $nombreCasquesEnfants = ($_POST['nombreCasquesEnfants']);
         // echo("not good");
@@ -161,5 +161,15 @@ $newReservation = new Reservation(
 );
 
 var_dump($newReservation);
+
+$DB = new Database();
+$retour = $DB->saveReservation($newReservation);
+
+if ($retour) {
+    header('location:../receipt.php?nom=' . $newReservation->getNom() . '&prixTotal=' . $newReservation->getPrixTotal());
+    die;
+} else {
+    header('location:../index.php?error='.ERROR_DB);
+}
 
 ?>
