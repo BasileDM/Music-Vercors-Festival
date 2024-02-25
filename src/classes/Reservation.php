@@ -129,9 +129,9 @@ class Reservation {
             "adresse" => $this->getAdresse(),
             "nbPersonnes" => $this->getNbPersonnes(),
             "prixTotal" => $this->getPrixTotal(),
+            "date" => $this->getDate(),
             "nbCasquesEnfants" => $this->getNbCasquesEnfants(),
-            "nbLugesEte" => $this->getNbLugesEte(),
-            "date" => $this->getDate()
+            "nbLugesEte" => $this->getNbLugesEte()
         ];
     }
 }

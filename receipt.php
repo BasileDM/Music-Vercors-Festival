@@ -7,8 +7,6 @@ require_once './src/classes/Database.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./assets/form-field-checker.js" defer></script>
-  <script src="../assets/section-display.js" defer></script>
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +37,7 @@ switch ($_GET['date']) {
     case 'choixJour3':
         echo '<p>Date : Pass un jour, pour la journée du 03/07</p>';
         break;
-    case 'choixjour12':
+    case 'choixJour12':
         echo '<p>Date : Pass deux jours, pour les journées du 01/07 au 02/07</p>';
         break;
     case 'choixJour23':
