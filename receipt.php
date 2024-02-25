@@ -25,9 +25,9 @@ echo '<p>Votre réservation a bien été prise en compte.<br>
     Merci de votre confiance ! <br></p>';
     
 
-echo '<p>Votre réservation: pour' . $_GET['$_nbPersonnes'] . 'personnes<br>
-    Nom :' . $_GET['nom'] . '<br>
-    Prenom :' . $_GET['prenom'] . '<br></p>';
+echo '<p>Votre réservation:<br> Pour ' . $_GET['nbPersonnes'] . ' personne(s).<br>
+    Nom : ' . $_GET['nom'] . '<br>
+    Prenom : ' . $_GET['prenom'] . '<br></p>';
 
 switch ($_GET['date']) {
     case 'choixJour1':
@@ -50,10 +50,10 @@ switch ($_GET['date']) {
         break;
 }
 
-echo '<p>Vous avez réservé' . $_GET['nbCasquesEnfants'] . "casques pour enfants<br>
-Vous avez réservé" . $_GET['nbLugesEte'] . 'descentes de luges<br></p>';
+echo '<p>Vous avez réservé ' . $_GET['nbCasquesEnfants'] . " casques pour enfants<br>
+Vous avez réservé " . $_GET['nbLugesEte'] . ' descentes de luges<br></p>';
 
-echo '<p>Prix Total :' . $_GET['prixTotal'] . '€<br></p>';
+echo '<p>Prix Total : ' . $_GET['prixTotal'] . '€<br></p>';
 ?>
 </body>
 </html>
