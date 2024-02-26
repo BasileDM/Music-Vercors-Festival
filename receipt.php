@@ -7,8 +7,6 @@ require_once './src/classes/Database.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./assets/form-field-checker.js" defer></script>
-  <script src="../assets/section-display.js" defer></script>
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,9 +23,9 @@ echo '<p>Votre réservation a bien été prise en compte.<br>
     Merci de votre confiance ! <br></p>';
     
 
-echo '<p>Votre réservation: pour' . $_GET['$_nbPersonnes'] . 'personnes<br>
-    Nom :' . $_GET['nom'] . '<br>
-    Prenom :' . $_GET['prenom'] . '<br></p>';
+echo '<p>Votre réservation:<br> Pour ' . $_GET['nbPersonnes'] . ' personne(s).<br>
+    Nom : ' . $_GET['nom'] . '<br>
+    Prenom : ' . $_GET['prenom'] . '<br></p>';
 
 switch ($_GET['date']) {
     case 'choixJour1':
@@ -39,7 +37,7 @@ switch ($_GET['date']) {
     case 'choixJour3':
         echo '<p>Date : Pass un jour, pour la journée du 03/07</p>';
         break;
-    case 'choixjour12':
+    case 'choixJour12':
         echo '<p>Date : Pass deux jours, pour les journées du 01/07 au 02/07</p>';
         break;
     case 'choixJour23':
@@ -50,10 +48,10 @@ switch ($_GET['date']) {
         break;
 }
 
-echo '<p>Vous avez réservé' . $_GET['nbCasquesEnfants'] . "casques pour enfants<br>
-Vous avez réservé" . $_GET['nbLugesEte'] . 'descentes de luges<br></p>';
+echo '<p>Vous avez réservé ' . $_GET['nbCasquesEnfants'] . " casques pour enfants<br>
+Vous avez réservé " . $_GET['nbLugesEte'] . ' descentes de luges<br></p>';
 
-echo '<p>Prix Total :' . $_GET['prixTotal'] . '€<br></p>';
+echo '<p>Prix Total : ' . $_GET['prixTotal'] . '€<br></p>';
 ?>
 </body>
 </html>

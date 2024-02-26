@@ -36,7 +36,6 @@ exit;
         exit;
     }
 
-    
         $nom = htmlspecialchars($_POST['nom']);
         $prenom = htmlspecialchars($_POST['prenom']);
    
@@ -153,16 +152,17 @@ $newReservation = new Reservation(
     $_POST['van3Nuits'] ?? null
 );
 
-var_dump($newReservation);
-
 $DB = new Database();
 $retour = $DB->saveReservation($newReservation);
 
 if ($retour) {
-    header('location:../receipt?nom=' 
-    . $newReservation->getNom() 
+    header('location:../receipt?nom=' . $newReservation->getNom() 
+    . '&prenom=' . $newReservation->getPrenom()
+    . '&nbPersonnes=' . $newReservation->getNbPersonnes()
     . '&prixTotal=' . $newReservation->getPrixTotal()
-    . '&date=' . $newReservation->getDate());
+    . '&date=' . $newReservation->getDate()
+    . '&nbCasquesEnfants=' . $newReservation->getNbCasquesEnfants()
+    . '&nbLugesEte=' . $newReservation->getNbLugesEte());
     die;
 } else {
     header('location:../index?error='.ERROR_DB);
