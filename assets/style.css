@@ -67,9 +67,6 @@ legend {
 }
 
 fieldset {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: 0;
     border-radius: 5px;
     margin: 2% 7%;
@@ -77,8 +74,6 @@ fieldset {
     padding: 5%;
     animation: 1.7s ease-in animation;
 }
-
-
 
 #coordonnees {
     display: flex;
@@ -112,6 +107,7 @@ input[type="submit"] {
     border: 1px solid black;
     border-radius: 5px;
     background-color: white;
+    margin: 2%;
     
     &:hover {
         cursor: pointer;

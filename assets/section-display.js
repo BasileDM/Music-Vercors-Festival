@@ -148,14 +148,7 @@ function suivant(elementId) {
 //     fieldsetCoordonnees.style.display = 'flex';
 // })
 
-function transition() {
-   const transitioning = fieldsetOptions.style.transition = 'all 2s ease';
-    
-}
 
-transition()
-fieldsetReservation.style.transition = 'all 1s ease';
-fieldsetOptions.style.transition = 'all 1s ease';
 
 
 

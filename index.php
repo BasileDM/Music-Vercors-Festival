@@ -131,10 +131,13 @@ if(isset($_GET['error'])) {
       <legend>Coordonnées</legend>
       <label for="nom">Nom :</label>
       <input type="text" name="nom" id="nom" required>
+      <br>
       <label for="prenom">Prénom :</label>
       <input type="text" name="prenom" id="prenom" required>
+      <br>
       <label for="email">Email :</label>
       <input type="email" name="email" id="email" required>
+      <br>
       <?php if($errorCode === 4) { ?>
           <div class= "message error">Saiser l'adresse mail.</div>
     <?php } ?>
