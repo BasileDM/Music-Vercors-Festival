@@ -13,7 +13,11 @@ isset($_POST['email']) &&
 isset($_POST['telephone']) && 
 isset($_POST['adressePostale'])) {
 
-    if(filter_var($_POST['nombrePlaces'], FILTER_VALIDATE_INT, array("options" => array("min_range"=>$min, "max_range"=>$max)))){
+
+    $max = 200;
+
+
+    if(filter_var($_POST['nombrePlaces'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> 0, "max_range"=>$max)))){
         $nombrePlaces = ($_POST['nombrePlaces']);
     } else {
             header('location:../index?error='.ERROR_NUMBER_OF_PLACES);
@@ -150,7 +154,9 @@ if ($retour) {
     . '&prixTotal=' . $newReservation->getPrixTotal()
     . '&date=' . $newReservation->getDate()
     . '&nbCasquesEnfants=' . $newReservation->getNbCasquesEnfants()
-    . '&nbLugesEte=' . $newReservation->getNbLugesEte());
+    . '&nbLugesEte=' . $newReservation->getNbLugesEte()
+    . '&tenteNuit1=' . $newReservation->getTenteNuit1()
+);
     die;
 } else {
     header('location:../index?error='.ERROR_DB);

@@ -11,7 +11,9 @@ class Reservation {
     private $_date;
     private $_nbCasquesEnfants;
     private $_nbLugesEte;
-    private $_tentenuit1;
+    // private $_tentenuit1;
+    // private $_tentenuit2;
+    // private $_tentenuit3;
 
     public function __construct(
         string $nom,
@@ -24,7 +26,10 @@ class Reservation {
         string $date,
         string $nbCasquesEnfants,
         string $nbLugesEte,
-        string $tentenuit1 = null
+        // string $tenteNuit1 = null,
+        // string $tenteNuit2 = null,
+        // string $tenteNuit3 = null,
+
     ) {
         $this->_nom = $nom;
         $this->_prenom = $prenom;
@@ -36,7 +41,9 @@ class Reservation {
         $this->_date = $date;
         $this->_nbCasquesEnfants = $nbCasquesEnfants;
         $this->_nbLugesEte = $nbLugesEte;
-        $this->_tentenuit1 = $tentenuit1;
+        $this->_tenteNuit1 = $tenteNuit1;
+        // $this->_tenteNuit2 = $tenteNuit2;
+        // $this->_tenteNuit3 = $tenteNuit3;
     }
 //#region Getters and Setters
     public function getNom(): string {
@@ -118,6 +125,14 @@ class Reservation {
     public function setPrixTotal(int $prixTotal) {
         $this->_prixTotal = $prixTotal;
     }
+
+    public function getTenteNuit1(): string {
+        return $this->_tenteNuit1;
+    }
+
+    public function setTenteNuit1(string $tenteNuit1) {
+        $this->_tenteNuit1 = $tenteNuit1;
+    }
 #endregion
 
     public function getObjectToArray(): array {
@@ -131,7 +146,9 @@ class Reservation {
             "prixTotal" => $this->getPrixTotal(),
             "date" => $this->getDate(),
             "nbCasquesEnfants" => $this->getNbCasquesEnfants(),
-            "nbLugesEte" => $this->getNbLugesEte()
+            "nbLugesEte" => $this->getNbLugesEte(),
+            "tenteNuit1" => $this->getTenteNuit1()
+            
         ];
     }
 }

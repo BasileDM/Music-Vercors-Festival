@@ -47,6 +47,10 @@ switch ($_GET['date']) {
         echo '<p>Date : Pass trois jours du 01/07 au 03/07</p>';
         break;
 }
+ 
+echo '<p>Vous avez réservé un emplacement en tente pour la nuit du' . $_GET['tenteNuit1'] . "</p>";
+// echo '<p>Vous avez réservé un emplacement en tente pour les nuits du' . $_GET['tenteNuit2'] . "</p>";
+// echo '<p>Vous avez réservé un emplacement en tente pour les trois nuits du' . $_GET['tenteNuit3'] . "</p>";
 
 echo '<p>Vous avez réservé ' . $_GET['nbCasquesEnfants'] . " casques pour enfants<br>
 Vous avez réservé " . $_GET['nbLugesEte'] . ' descentes de luges<br></p>';
