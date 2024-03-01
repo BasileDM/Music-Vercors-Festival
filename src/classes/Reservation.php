@@ -11,9 +11,9 @@ class Reservation {
     private $_date;
     private $_nbCasquesEnfants;
     private $_nbLugesEte;
-    // private $_tentenuit1;
-    // private $_tentenuit2;
-    // private $_tentenuit3;
+    private $_tente;
+    private $_Van;
+   
 
     public function __construct(
         string $nom,
@@ -26,10 +26,9 @@ class Reservation {
         string $date,
         string $nbCasquesEnfants,
         string $nbLugesEte,
-        // string $tenteNuit1 = null,
-        // string $tenteNuit2 = null,
-        // string $tenteNuit3 = null,
-
+        string $tente,
+        string $van
+       
     ) {
         $this->_nom = $nom;
         $this->_prenom = $prenom;
@@ -41,9 +40,9 @@ class Reservation {
         $this->_date = $date;
         $this->_nbCasquesEnfants = $nbCasquesEnfants;
         $this->_nbLugesEte = $nbLugesEte;
-        $this->_tenteNuit1 = $tenteNuit1;
-        // $this->_tenteNuit2 = $tenteNuit2;
-        // $this->_tenteNuit3 = $tenteNuit3;
+        $this->_tente = $tente;
+        $this->_van = $van;
+      
     }
 //#region Getters and Setters
     public function getNom(): string {
@@ -126,13 +125,23 @@ class Reservation {
         $this->_prixTotal = $prixTotal;
     }
 
-    public function getTenteNuit1(): string {
-        return $this->_tenteNuit1;
+    public function getTente(): string {
+        return $this->_tente;
     }
 
-    public function setTenteNuit1(string $tenteNuit1) {
-        $this->_tenteNuit1 = $tenteNuit1;
+    public function setTente(string $tente) {
+        $this->_tente = $tente; 
     }
+
+    public function getVan(): string {
+        return $this->_van;
+    }
+
+    public function setVan(string $van) {
+        $this->_van = $van;
+    }
+
+
 #endregion
 
     public function getObjectToArray(): array {
@@ -147,7 +156,8 @@ class Reservation {
             "date" => $this->getDate(),
             "nbCasquesEnfants" => $this->getNbCasquesEnfants(),
             "nbLugesEte" => $this->getNbLugesEte(),
-            "tenteNuit1" => $this->getTenteNuit1()
+            "tente" => $this->getTente(),
+            "van" => $this->getVan()
             
         ];
     }

@@ -22,7 +22,7 @@ class Database {
 
     while (($reservation = fgetcsv($connexion, 1000, ","))) {
       if (empty($reservation[0])) continue;
-      $reservations[] = new Reservation($reservation[0], $reservation[1], $reservation[2], $reservation[3], $reservation[4], $reservation[5], $reservation[6], $reservation[7], $reservation[8], $reservation[9]);
+      $reservations[] = new Reservation($reservation[0], $reservation[1], $reservation[2], $reservation[3], $reservation[4], $reservation[5], $reservation[6], $reservation[7], $reservation[8], $reservation[9], $reservation[10]);
     }
     fclose($connexion);
     return $reservations;

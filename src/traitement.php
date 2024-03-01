@@ -31,6 +31,13 @@ isset($_POST['adressePostale'])) {
     exit;
     }
 
+    if(filter_var($_POST['NombreLugesEte'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> 0, "max_range"=> $max))) || $_POST['NombreLugesEte'] === '0') {
+        $nombreLugesEte = ($_POST['NombreLugesEte']);    
+    } else {
+        header('location:../index.php?error='.ERROR_NUMBER_OF_HEADPHONES);
+    exit;
+    }
+
     $nom = htmlspecialchars($_POST['nom']);
 
     $prenom = htmlspecialchars($_POST['prenom']);
@@ -52,7 +59,7 @@ isset($_POST['adressePostale'])) {
     $adressePostale = htmlspecialchars($_POST['adressePostale']);    
     };
 
-var_dump($_POST);
+// var_dump($_POST);
 
 $prixTotal = 0;
 // Checking pass selection cost
@@ -123,6 +130,47 @@ if ($_POST['passSelection'] === 'pass1jour') {
     $date = 'pass3jours';
 }
 
+
+
+// if ($_POST['tenteNuit1'] === 'tenteNuit1') {
+//     $tenteNuit = $_POST['tenteNuit1'];
+// } elseif ($_POST['tenteNuit2'] === 'tenteNuit2') {
+//     $tenteNuit = $_POST['tenteNuit2'];
+// } elseif ($_POST['tenteNuit3'] === 'tenteNuit3') {
+//     $tenteNuit = $_POST['tenteNuit3'];
+// } elseif ($_POST['tente3Nuits'] === 'tente3Nuits') {
+//     $tenteNuit = $_POST['tente3Nuits'];
+// }
+
+//Selection des dates pour les tentes
+if (isset($_POST['tenteNuit1'])) {
+    $tenteNuit = $_POST['tenteNuit1'];
+} elseif (isset($_POST['tenteNuit2'])) {
+    $tenteNuit = $_POST['tenteNuit2'];
+} elseif (isset($_POST['tenteNuit3'])) {
+    $tenteNuit = $_POST['tenteNuit3'];
+} elseif (isset($_POST['tente3Nuits'])) {
+    $tenteNuit = $_POST['tente3Nuits'];
+} else { 
+    $tenteNuit === null;
+}
+
+ 
+
+
+//Selection des dates pour les vans
+
+if (isset($_POST['vanNuit1'])) {
+    $VanNuit = $_POST['vanNuit1'];
+} elseif (isset($_POST['vanNuit2'])) {
+    $VanNuit = $_POST['vanNuit2'];
+} elseif (isset($_POST['vanNuit3'])) {
+    $VanNuit = $_POST['vanNuit3'];
+} elseif (isset($_POST['van3Nuits'])) {
+    $VanNuit = $_POST['van3Nuits'];
+}
+
+
 $newReservation = new Reservation(
     $nom,
     $prenom,
@@ -132,16 +180,10 @@ $newReservation = new Reservation(
     $nombrePlaces,
     $prixTotal,
     $date,
-    $nombreCasquesEnfants, 
-    $_POST['NombreLugesEte'],
-    $_POST['tenteNuit1'] ?? null,
-    $_POST['tenteNuit2'] ?? null,
-    $_POST['tenteNuit3'] ?? null,
-    $_POST['tente3Nuits'] ?? null,
-    $_POST['vanNuit1'] ?? null,
-    $_POST['vanNuit2'] ?? null,
-    $_POST['vanNuit3'] ?? null,
-    $_POST['van3Nuits'] ?? null
+    $nombreCasquesEnfants,
+    $nombreLugesEte,
+    $tenteNuit,
+    $vanNuit
 );
 
 $DB = new Database();
@@ -155,7 +197,9 @@ if ($retour) {
     . '&date=' . $newReservation->getDate()
     . '&nbCasquesEnfants=' . $newReservation->getNbCasquesEnfants()
     . '&nbLugesEte=' . $newReservation->getNbLugesEte()
-    . '&tenteNuit1=' . $newReservation->getTenteNuit1()
+    . '&tente=' . $newReservation->getTente()
+    . '&van=' . $newReservation->getVan()
+    
 );
     die;
 } else {
