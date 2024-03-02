@@ -52,32 +52,39 @@ switch ($_GET['tente']) {
     case 'choixNuit1':
         echo'<p>Vous avez réservé un emplacement en tente pour la nuit du 01/07</p>';
         break;
+
     case 'choixNuit2':
-        echo'<p>Vous avez réservé un emplacement en tente pour les nuits du 02/07</p>';
+        echo'<p>Vous avez réservé un emplacement en tente pour la nuit du 02/07</p>';
         break;
+
     case 'choixNuit3':
-        echo'<p>Vous avez réservé un emplacement en tente pour les trois nuits du 03/07</p>';
+        echo'<p>Vous avez réservé un emplacement en tente pour la nuit du 03/07</p>';
+        break;
+        
     case 'choix3Nuits':
         echo'<p>Vous avez réservé un emplacement en tente pour les trois nuits</p>';
         break;
 }
 
 switch ($_GET['van']) {
+
     case 'choixVanNuit1':
-        echo'<p>Vous avez réservé un emplacement en tente pour la nuit du 01/07</p>';
+        echo'<p>Vous avez réservé un emplacement de van pour la nuit du 01/07</p>';
         break;
+
     case 'choixVanNuit2':
-        echo'<p>Vous avez réservé un emplacement en tente pour les nuits du 02/07</p>';
+        echo'<p>Vous avez réservé un emplacement de van pour la nuit du 02/07</p>';
         break;
+
     case 'choixVanNuit3':
-        echo'<p>Vous avez réservé un emplacement en tente pour les trois nuits du 03/07</p>';
+        echo'<p>Vous avez réservé un emplacement de van pour la nuit du 03/07</p>';
+        break;
+
     case 'choixVan3Nuits':
-        echo'<p>Vous avez réservé un emplacement en tente pour les trois nuits</p>';
+        echo'<p>Vous avez réservé un emplacement de van pour les trois nuits</p>';
         break;
 }
  
-
-
 echo '<p>Vous avez réservé ' . $_GET['nbCasquesEnfants'] . " casques pour enfants<br>
 
 Vous avez réservé " . $_GET['nbLugesEte'] . ' descentes de luges<br></p>';

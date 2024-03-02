@@ -16,6 +16,7 @@
                     <p> Nombre de places : </p>
                     <p> Prix total : </p>
                     <p> Date : </p>
+                    
                     <p> Nombre de casques enfants : </p>
                     <p> Nombre de luges d\'ete : </p>
                 </div>

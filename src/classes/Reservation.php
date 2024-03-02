@@ -12,7 +12,7 @@ class Reservation {
     private $_nbCasquesEnfants;
     private $_nbLugesEte;
     private $_tente;
-    private $_Van;
+    private $_van;
    
 
     public function __construct(
@@ -140,8 +140,6 @@ class Reservation {
     public function setVan(string $van) {
         $this->_van = $van;
     }
-
-
 #endregion
 
     public function getObjectToArray(): array {
@@ -158,7 +156,6 @@ class Reservation {
             "nbLugesEte" => $this->getNbLugesEte(),
             "tente" => $this->getTente(),
             "van" => $this->getVan()
-            
         ];
     }
 }
