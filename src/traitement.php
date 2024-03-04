@@ -161,13 +161,13 @@ if (isset($_POST['tenteNuit1'])) {
 //Selection des dates pour les vans
 
 if (isset($_POST['vanNuit1'])) {
-    $VanNuit = $_POST['vanNuit1'];
+    $vanNuit = $_POST['vanNuit1'];
 } elseif (isset($_POST['vanNuit2'])) {
-    $VanNuit = $_POST['vanNuit2'];
+    $vanNuit = $_POST['vanNuit2'];
 } elseif (isset($_POST['vanNuit3'])) {
-    $VanNuit = $_POST['vanNuit3'];
+    $vanNuit = $_POST['vanNuit3'];
 } elseif (isset($_POST['van3Nuits'])) {
-    $VanNuit = $_POST['van3Nuits'];
+    $vanNuit = $_POST['van3Nuits'];
 }
 
 
