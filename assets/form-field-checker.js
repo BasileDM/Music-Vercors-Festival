@@ -176,6 +176,14 @@ const enfantsCheckboxOui = document.getElementById("enfantsOui");
 const enfantsCheckboxNon = document.getElementById("enfantsNon");
 const noiseReductionField = document.getElementById("nombreCasquesEnfants");
 const summerSledField = document.getElementById("NombreLugesEte");
+const tenteNuit1 = document.getElementById("tenteNuit1");
+const tenteNuit2 = document.getElementById("tenteNuit2");
+const tenteNuit3 = document.getElementById("tenteNuit3");
+const tente3Nuits = document.getElementById("tente3Nuits");
+const vanNuit1 = document.getElementById("vanNuit1");
+const vanNuit2 = document.getElementById("vanNuit2");
+const vanNuit3 = document.getElementById("vanNuit3");
+const van3Nuits = document.getElementById("van3Nuits");
 
 function checkIfSection2IsValid() {
     if (!isNoiseReductionFieldValid || !isSummerSledFieldValid || !isEnfantsCheckboxValid) {
@@ -200,6 +208,38 @@ if (!enfantsCheckboxOui.checked || !enfantsCheckboxNon.checked) {
 } else {
     validateField(enfantsNonLabel, false);
 }
+//Uncheck tentes if 3 days is selected
+tente3Nuits.onchange = () => {
+    tenteNuit1.checked = false;
+    tenteNuit2.checked = false;
+    tenteNuit3.checked = false;
+}
+tenteNuit1.onchange = () => {
+    tente3Nuits.checked = false;
+}
+tenteNuit2.onchange = () => {
+    tente3Nuits.checked = false;
+}
+tenteNuit3.onchange = () => {
+    tente3Nuits.checked = false;
+}
+
+//Uncheck vans if 3 days is selected
+van3Nuits.onchange = () => {
+    vanNuit1.checked = false;
+    vanNuit2.checked = false;
+    vanNuit3.checked = false;
+}
+vanNuit1.onchange = () => {
+    van3Nuits.checked = false;
+}
+vanNuit2.onchange = () => {
+    van3Nuits.checked = false;
+}
+vanNuit3.onchange = () => {
+    van3Nuits.checked = false;
+}
+
 // Enfants
 enfantsCheckboxOui.onchange = () => {
     enfantsCheckboxOui.checked || enfantsCheckboxNon.checked
@@ -368,7 +408,7 @@ phoneField.onchange = () => {
 }
 
 addressField.onchange = () => {
-    addressField.value = addressField.value.replace(/6/g, "-").replace(/[^a-zA-Z\-ç\u00E0-\u00FF]/g, "");
+    addressField.value = addressField.value.replace(/[^[a-zA-Z0-9\s\,\''\-]*$]/g, "");
     addressField.value = addressField.value.trim();
     addressField.value = addressField.value.charAt(0).toUpperCase() + addressField.value.slice(1).toLowerCase();
     addressField.value = addressField.value.replace(/\-(\w)/g, function (match, group1) {
