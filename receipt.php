@@ -15,15 +15,17 @@ require_once './src/classes/Database.php';
 </head>
 
 <body>
+
 <?php
 
 include './includes/header.php';
 
-echo '<p>Votre réservation a bien été prise en compte.<br>
+echo '<div id=receipt>
+    <p><strong>Votre réservation a bien été prise en compte.</strong><br>
     Merci de votre confiance ! <br></p>';
     
 
-echo '<p>Votre réservation:<br> Pour ' . $_GET['nbPersonnes'] . ' personne(s).<br>
+echo '<p><strong>Votre réservation:</strong><br> Pour ' . $_GET['nbPersonnes'] . ' personne(s)<br>
     Nom : ' . $_GET['nom'] . '<br>
     Prenom : ' . $_GET['prenom'] . '<br></p>';
 
@@ -105,7 +107,8 @@ echo '<p>Vous avez réservé ' . $_GET['nbCasquesEnfants'] . " casques pour enfa
 
 Vous avez réservé " . $_GET['nbLugesEte'] . ' descentes de luges<br></p>';
 
-echo '<p>Prix Total : ' . $_GET['prixTotal'] . '€<br></p>';
+echo '<p><strong>Prix Total : ' . $_GET['prixTotal'] . '€</strong><br></p></div>';
 ?>
+
 </body>
 </html>

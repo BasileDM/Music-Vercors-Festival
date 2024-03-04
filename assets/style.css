@@ -32,8 +32,6 @@ header {
 #logo {
     width: 30%;
     height: 30%;
-    
-    
 }
 
 #connexion {
@@ -181,4 +179,13 @@ a {
 
 #loginForm {
     margin-left: 5%;
+}
+
+#receipt {
+    margin-left: 5%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1em;
+    max-width: 40%;
+    margin-left: 15%;
 }
