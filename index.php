@@ -13,7 +13,7 @@ if(isset($_GET['error'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="./assets/form-field-checker.js" defer></script>
-  <script src="../assets/section-display.js" defer></script>
+  <script src="./assets/section-display.js" defer></script>
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@ if(isset($_GET['error'])) {
   include './includes/header.php';
 
   ?>
-  <form onsubmit="return finalCheck(event)" action="./src/traitement" id="inscription" method="POST">
+  <form onsubmit="return finalCheck(event)" action="./src/traitement.php" id="inscription" method="POST">
     <fieldset id="reservation">
       <legend>Réservation</legend>
       <h3>Nombre de réservation(s) :</h3>
@@ -93,6 +93,10 @@ if(isset($_GET['error'])) {
       <label for="tenteNuit2">Pour la nuit du 02/07 (5€)</label>
       <input type="radio" id="tenteNuit3" name="emplacementTente" value="choixNuit3">
       <label for="tenteNuit3">Pour la nuit du 03/07 (5€)</label>
+      <input type="radio" id="tenteNuits12" name="emplacementTente" value="choixNuits12">
+      <label for="tenteNuits12">Pour les nuits du 01 et 02/07 (5€)</label>
+      <input type="radio" id="tenteNuits23" name="emplacementTente" value="choixNuits23">
+      <label for="tenteNuits23">Pour les nuits du 02 et 03/07 (5€)</label>
       <input type="radio" id="tente3Nuits" name="emplacementTente" value="choix3Nuits">
       <label for="tente3Nuits">Pour les 3 nuits (12€)</label>
 
@@ -103,6 +107,10 @@ if(isset($_GET['error'])) {
       <label for="vanNuit2">Pour la nuit du 02/07 (5€)</label>
       <input type="radio" id="vanNuit3" name="emplacementVan" value="choixVanNuit3">
       <label for="vanNuit3">Pour la nuit du 03/07 (5€)</label>
+      <input type="radio" id="vanNuits12" name="emplacementVan" value="choixVanNuits12">
+      <label for="vanNuits12">Pour les nuits du 01 et 02/07 (5€)</label>
+      <input type="radio" id="vanNuits23" name="emplacementVan" value="choixVanNuits23">
+      <label for="vanNuits23">Pour les nuits du 02 et 03/07 (5€)</label>
       <input type="radio" id="van3Nuits" name="emplacementVan" value="choixVan3Nuits">
       <label for="van3Nuits">Pour les 3 nuits (12€)</label>
 

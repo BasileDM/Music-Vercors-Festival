@@ -1,5 +1,6 @@
 <div id="account-section">
-    <?php
-        var_dump($_SESSION);
+    <?=
+        '<p>Identité : ' . $_SESSION['user'] . '</p> 
+        <p> Connecté : ' .  $_SESSION['connected'] . '</p>'
     ?>
 </div>

@@ -22,7 +22,7 @@
 
   ?>
 
-    <form action="./src/authentication" method="post" id="loginForm">
+    <form action="./src/authentication.php" method="post" id="loginForm">
       <h1>Connexion</h1>
       <label for="password">Mot de passe :</label>
       <input type="password" id="password" name="password" required>

@@ -22,6 +22,7 @@ body {
 header {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
     .bouton {
         margin: 5%;
@@ -29,8 +30,10 @@ header {
 }
 
 #logo {
-    max-width: 300px;
-    max-height: 200px;
+    width: 30%;
+    height: 30%;
+    
+    
 }
 
 #connexion {
@@ -86,7 +89,7 @@ input[type="text"], input[type="email"] {
 }
 
 input[type="checkbox"] {
-    accent-color: tomato;
+    accent-color: black;
 }
 
 input[type="submit"] {
@@ -94,6 +97,10 @@ input[type="submit"] {
     font-family: "PT Sans Narrow", sans-serif;
     font-size: 30px;
     background-color: white;
+}
+
+input[type="radio"] {
+    accent-color: black;
 }
 
 
@@ -118,25 +125,29 @@ input[type="submit"] {
 .bouton {
   align-items: center;
   background-color: white;
-  border: 2px solid #111;
+  border: 1.5px solid #111;
   border-radius: 8px;
   box-sizing: border-box;
   color: #111;
   cursor: pointer;
-  display: flex;
   font-size: 16px;
+  font-style: normal;
   height: 40px;
+  display: flex;
   justify-content: center;
+  line-height: 24px;
+  width: 15%;
   padding: 0 25px;
   position: relative;
   text-align: center;
   text-decoration: none;
   touch-action: manipulation;
+  font-weight: 700;
 }
 
 a {
     text-decoration: none;
-    color: #111;
+    color: black;
 }
 
 .bouton:after {
