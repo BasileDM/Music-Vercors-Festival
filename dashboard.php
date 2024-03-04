@@ -32,7 +32,7 @@
                     break;
             }
         } else {
-            echo 'Bienvenue sur le tableau de bord.';
+            echo "<p id= dashboard_message>" . 'Bienvenue sur le tableau de bord.' . "</p>";
         }
         ?>
     </div>

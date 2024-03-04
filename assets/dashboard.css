@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: row;
     height: max-content;
+    gap: 10%;
+    font-size: larger;
+    margin: 5% 0 0 0;
 }
 
 #colonne {
@@ -13,7 +16,7 @@
     border: 1px solid black;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    height: max-content;
+    height: 100vh;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 
     h2 {
@@ -29,6 +32,7 @@
 
     li {
         list-style: none;
+        margin: 5%;
 
         &:hover {
             background-color: tomato;
@@ -103,4 +107,9 @@
 
 .reservation-column {
     flex : 0.5;
+}
+
+#dashboard_message {
+    font-size: x-large;
+    font-style: normal;
 }
