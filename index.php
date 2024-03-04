@@ -87,23 +87,23 @@ if(isset($_GET['error'])) {
     <fieldset id="options">
       <legend>Options</legend>
       <h3>Réserver un emplacement de tente : </h3>
-      <input type="checkbox" id="tenteNuit1" name="tenteNuit1" value="choixNuit1">
+      <input type="checkbox" id="tenteNuit1" name="emplacementTente" value="choixNuit1">
       <label for="tenteNuit1">Pour la nuit du 01/07 (5€)</label>
-      <input type="checkbox" id="tenteNuit2" name="tenteNuit2" value="choixNuit2">
+      <input type="checkbox" id="tenteNuit2" name="emplacementTente" value="choixNuit2">
       <label for="tenteNuit2">Pour la nuit du 02/07 (5€)</label>
-      <input type="checkbox" id="tenteNuit3" name="tenteNuit3" value="choixNuit3">
+      <input type="checkbox" id="tenteNuit3" name="emplacementTente" value="choixNuit3">
       <label for="tenteNuit3">Pour la nuit du 03/07 (5€)</label>
-      <input type="checkbox" id="tente3Nuits" name="tente3Nuits" value="choix3Nuits">
+      <input type="checkbox" id="tente3Nuits" name="emplacementTente" value="choix3Nuits">
       <label for="tente3Nuits">Pour les 3 nuits (12€)</label>
 
       <h3>Réserver un emplacement de camion aménagé : </h3>
-      <input type="checkbox" id="vanNuit1" name="vanNuit1" value="choixVanNuit1">
+      <input type="checkbox" id="vanNuit1" name="emplacementVan" value="choixVanNuit1">
       <label for="vanNuit1">Pour la nuit du 01/07 (5€)</label>
-      <input type="checkbox" id="vanNuit2" name="vanNuit2" value="choixVanNuit2">
+      <input type="checkbox" id="vanNuit2" name="emplacementVan" value="choixVanNuit2">
       <label for="vanNuit2">Pour la nuit du 02/07 (5€)</label>
-      <input type="checkbox" id="vanNuit3" name="vanNuit3" value="choixVanNuit3">
+      <input type="checkbox" id="vanNuit3" name="emplacementVan" value="choixVanNuit3">
       <label for="vanNuit3">Pour la nuit du 03/07 (5€)</label>
-      <input type="checkbox" id="van3Nuits" name="van3Nuits" value="choixVan3Nuits">
+      <input type="checkbox" id="van3Nuits" name="emplacementVan" value="choixVan3Nuits">
       <label for="van3Nuits">Pour les 3 nuits (12€)</label>
 
       <h3>Venez-vous avec des enfants ?</h3>
