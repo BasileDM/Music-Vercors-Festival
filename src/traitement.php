@@ -13,11 +13,9 @@ isset($_POST['email']) &&
 isset($_POST['telephone']) && 
 isset($_POST['adressePostale'])) {
 
-
     $max = 200;
 
-
-    if(filter_var($_POST['nombrePlaces'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> 0, "max_range"=>$max)))){
+    if(filter_var($_POST['nombrePlaces'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> 1, "max_range"=>$max)))){
         $nombrePlaces = ($_POST['nombrePlaces']);
     } else {
             header('location:../index?error='.ERROR_NUMBER_OF_PLACES);
@@ -57,7 +55,7 @@ isset($_POST['adressePostale'])) {
     }
 
     $adressePostale = htmlspecialchars($_POST['adressePostale']);    
-    };
+};
 
 // var_dump($_POST);
 
