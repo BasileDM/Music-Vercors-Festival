@@ -18,7 +18,7 @@ isset($_POST['adressePostale'])) {
     if(filter_var($_POST['nombrePlaces'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> 1, "max_range"=>$max)))){
         $nombrePlaces = ($_POST['nombrePlaces']);
     } else {
-            header('location:../index?error='.ERROR_NUMBER_OF_PLACES);
+            header('location:../index.php?error='.ERROR_NUMBER_OF_PLACES);
     exit;
     }
 
@@ -89,6 +89,12 @@ if (isset($_POST['emplacementTente'])) {
         case 'choixNuit3':
             $prixTotal += 5;
             break;
+        case 'choixNuits12':
+            $prixTotal += 10;
+            break;
+        case 'choixNuits23':
+            $prixTotal += 10;
+            break;
         case 'choix3Nuits':
             $prixTotal += 12;
             break;
@@ -107,6 +113,12 @@ if (isset($_POST['emplacementVan'])) {
             break;
         case 'choixVanNuit3':
             $prixTotal += 5;
+            break;
+        case 'choixVanNuits12':
+            $prixTotal += 10;
+            break;
+        case 'choixVanNuits23':
+            $prixTotal += 10;
             break;
         case 'choixVan3Nuits':
             $prixTotal += 12;
@@ -172,7 +184,7 @@ $DB = new Database();
 $retour = $DB->saveReservation($newReservation);
 
 if ($retour) {
-    header('location:../receipt?nom=' . $newReservation->getNom() 
+    header('location:../receipt.php?nom=' . $newReservation->getNom() 
     . '&prenom=' . $newReservation->getPrenom()
     . '&nbPersonnes=' . $newReservation->getNbPersonnes()
     . '&prixTotal=' . $newReservation->getPrixTotal()
@@ -185,7 +197,7 @@ if ($retour) {
     die;
 
 } else {
-    header('location:../index?error='.ERROR_DB);
+    header('location:../index.php?error='.ERROR_DB);
 }
 
 ?>

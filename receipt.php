@@ -60,6 +60,14 @@ switch ($_GET['tente']) {
     case 'choixNuit3':
         echo'<p>Vous avez réservé un emplacement en tente pour la nuit du 03/07</p>';
         break;
+    
+    case 'choixNuits12':
+        echo'<p>Vous avez réservé un emplacement en tente pour les nuits du 01 et 02/07</p>';
+        break;
+    
+    case 'choixNuits23':
+        echo'<p>Vous avez réservé un emplacement en tente pour les nuits du 02 et 03/07</p>';
+        break;
         
     case 'choix3Nuits':
         echo'<p>Vous avez réservé un emplacement en tente pour les trois nuits</p>';
@@ -78,6 +86,14 @@ switch ($_GET['van']) {
 
     case 'choixVanNuit3':
         echo'<p>Vous avez réservé un emplacement de van pour la nuit du 03/07</p>';
+        break;
+    
+    case 'choixVanNuits12':
+        echo'<p>Vous avez réservé un emplacement de van pour les nuits du 01 et 02/07</p>';
+        break;
+    
+    case 'choixVanNuits23':
+        echo'<p>Vous avez réservé un emplacement de van pour les nuits du 02 et 03/07</p>';
         break;
 
     case 'choixVan3Nuits':

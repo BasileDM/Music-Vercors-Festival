@@ -4,7 +4,7 @@
     if (isset($_POST['soumission'])) {
         $password = $_POST['password'];
     } else {
-        header('location:../index');
+        header('location:../index.php');
         exit;
     }
 
@@ -12,10 +12,10 @@
         session_start();
         $_SESSION['connected'] = true;
         $_SESSION['user'] = 'admin';
-        header('location:../dashboard');
+        header('location:../dashboard.php');
         exit;
     } else {
-        header('location:../connexion?error='.ERROR_PASSWORD);
+        header('location:../connexion.php?error='.ERROR_PASSWORD);
         exit;
     }
 ?>
