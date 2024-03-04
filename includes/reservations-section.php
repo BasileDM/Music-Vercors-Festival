@@ -16,9 +16,10 @@
                     <p> Nombre de places : </p>
                     <p> Prix total : </p>
                     <p> Date : </p>
-                    
-                    <p> Nombre de casques enfants : </p>
-                    <p> Nombre de luges d\'ete : </p>
+                    <p> Casques enfants : </p>
+                    <p> Luges d\'ete : </p>
+                    <p> Tente : </p>
+                    <p> Van : </p>
                 </div>
                 <div class="reservation-column">
                     <p>' . $reservation->getPrenom() . '</p>
@@ -30,9 +31,10 @@
                     <p>' . $reservation->getDate() . '</p>
                     <p>' . $reservation->getNbCasquesEnfants() . '</p>
                     <p>' . $reservation->getNbLugesEte() . '</p>
+                    <p>' . $reservation->getTente() . '</p>
+                    <p>' . $reservation->getVan() . '</p>
                 </div>
             </div>';
         }
-
     ?>
 </div>

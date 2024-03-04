@@ -13,11 +13,9 @@ isset($_POST['email']) &&
 isset($_POST['telephone']) && 
 isset($_POST['adressePostale'])) {
 
-
     $max = 200;
 
-
-    if(filter_var($_POST['nombrePlaces'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> 0, "max_range"=>$max)))){
+    if(filter_var($_POST['nombrePlaces'], FILTER_VALIDATE_INT, array("options" => array("min_range"=> 1, "max_range"=>$max)))){
         $nombrePlaces = ($_POST['nombrePlaces']);
     } else {
             header('location:../index?error='.ERROR_NUMBER_OF_PLACES);
@@ -57,7 +55,7 @@ isset($_POST['adressePostale'])) {
     }
 
     $adressePostale = htmlspecialchars($_POST['adressePostale']);    
-    };
+};
 
 // var_dump($_POST);
 
@@ -130,30 +128,18 @@ if ($_POST['passSelection'] === 'pass1jour') {
     $date = 'pass3jours';
 }
 
-//Selection des dates pour les tentes
-if (isset($_POST['tenteNuit1'])) {
-    $tenteNuit = $_POST['tenteNuit1'];
-} elseif (isset($_POST['tenteNuit2'])) {
-    $tenteNuit = $_POST['tenteNuit2'];
-} elseif (isset($_POST['tenteNuit3'])) {
-    $tenteNuit = $_POST['tenteNuit3'];
-} elseif (isset($_POST['tente3Nuits'])) {
-    $tenteNuit = $_POST['tente3Nuits'];
-} else { 
-    $tenteNuit = "aucune";
+// Selection des dates pour les tentes
+if (isset($_POST['emplacementTente'])) {
+    $emplacementTente = $_POST['emplacementTente'];
+} else {
+    $emplacementTente = "aucune";
 }
 
 //Selection des dates pour les vans
-if (isset($_POST['vanNuit1'])) {
-    $vanNuit = $_POST['vanNuit1'];
-} elseif (isset($_POST['vanNuit2'])) {
-    $vanNuit = $_POST['vanNuit2'];
-} elseif (isset($_POST['vanNuit3'])) {
-    $vanNuit = $_POST['vanNuit3'];
-} elseif (isset($_POST['van3Nuits'])) {
-    $vanNuit = $_POST['van3Nuits'];
+if (isset($_POST['emplacementVan'])) {
+    $emplacementVan = $_POST['emplacementVan'];
 } else {
-    $vanNuit = "aucun";
+    $emplacementVan = "aucun";
 }
 
 $newReservation = new Reservation(
@@ -167,8 +153,8 @@ $newReservation = new Reservation(
     $date,
     $nombreCasquesEnfants,
     $nombreLugesEte,
-    $tenteNuit,
-    $vanNuit
+    $emplacementTente,
+    $emplacementVan
 );
 
 $DB = new Database();
@@ -192,3 +178,4 @@ if ($retour) {
 }
 
 ?>
+
