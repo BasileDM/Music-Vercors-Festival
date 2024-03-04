@@ -1,5 +1,5 @@
     <header>
-        <img src="../assets/images/vercorsLogo.png" id="logo" alt="Vercors_Music_Festival_Logo" onclick="location.href='../index'">
+        <img src="./assets/images/vercorsLogo.png" id="logo" alt="Vercors_Music_Festival_Logo" onclick="location.href='../index'">
 
         <?php 
             session_start();
