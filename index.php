@@ -56,12 +56,12 @@ if(isset($_GET['error'])) {
 
       <!-- Si case cochée, afficher le choix du jour -->
       <section id="pass1jourDate">
-        <input type="checkbox" name="pass1jour" id="choixJour1" value="choixJour1">
+        <input type="radio" name="pass1jour" id="choixJour1" value="choixJour1">
         <label for="choixJour1">Pass pour la journée du 01/07</label>
-        <input type="checkbox" name="pass1jour" id="choixJour2" value="choixJour2">
+        <input type="radio" name="pass1jour" id="choixJour2" value="choixJour2">
         <label for="choixJour2">Pass pour la journée du 02/07</label>
         <br>
-        <input type="checkbox" name="pass1jour" id="choixJour3" value="choixJour3">
+        <input type="radio" name="pass1jour" id="choixJour3" value="choixJour3">
         <label for="choixJour3">Pass pour la journée du 03/07</label>
       </section>
 
@@ -70,9 +70,9 @@ if(isset($_GET['error'])) {
 
       <!-- Si case cochée, afficher le choix des jours -->
       <section id="pass2joursDate">
-        <input type="checkbox" name="pass2jours" id="choixJour12" value="choixJour12">
+        <input type="radio" name="pass2jours" id="choixJour12" value="choixJour12">
         <label for="choixJour12">Pass pour deux journées du 01/07 au 02/07</label>
-        <input type="checkbox" name="pass2jours" id="choixJour23" value="choixJour23">
+        <input type="radio" name="pass2jours" id="choixJour23" value="choixJour23">
         <label for="choixJour23">Pass pour deux journées du 02/07 au 03/07</label>
       </section>
 
@@ -87,23 +87,23 @@ if(isset($_GET['error'])) {
     <fieldset id="options">
       <legend>Options</legend>
       <h3>Réserver un emplacement de tente : </h3>
-      <input type="checkbox" id="tenteNuit1" name="emplacementTente" value="choixNuit1">
+      <input type="radio" id="tenteNuit1" name="emplacementTente" value="choixNuit1">
       <label for="tenteNuit1">Pour la nuit du 01/07 (5€)</label>
-      <input type="checkbox" id="tenteNuit2" name="emplacementTente" value="choixNuit2">
+      <input type="radio" id="tenteNuit2" name="emplacementTente" value="choixNuit2">
       <label for="tenteNuit2">Pour la nuit du 02/07 (5€)</label>
-      <input type="checkbox" id="tenteNuit3" name="emplacementTente" value="choixNuit3">
+      <input type="radio" id="tenteNuit3" name="emplacementTente" value="choixNuit3">
       <label for="tenteNuit3">Pour la nuit du 03/07 (5€)</label>
-      <input type="checkbox" id="tente3Nuits" name="emplacementTente" value="choix3Nuits">
+      <input type="radio" id="tente3Nuits" name="emplacementTente" value="choix3Nuits">
       <label for="tente3Nuits">Pour les 3 nuits (12€)</label>
 
       <h3>Réserver un emplacement de camion aménagé : </h3>
-      <input type="checkbox" id="vanNuit1" name="emplacementVan" value="choixVanNuit1">
+      <input type="radio" id="vanNuit1" name="emplacementVan" value="choixVanNuit1">
       <label for="vanNuit1">Pour la nuit du 01/07 (5€)</label>
-      <input type="checkbox" id="vanNuit2" name="emplacementVan" value="choixVanNuit2">
+      <input type="radio" id="vanNuit2" name="emplacementVan" value="choixVanNuit2">
       <label for="vanNuit2">Pour la nuit du 02/07 (5€)</label>
-      <input type="checkbox" id="vanNuit3" name="emplacementVan" value="choixVanNuit3">
+      <input type="radio" id="vanNuit3" name="emplacementVan" value="choixVanNuit3">
       <label for="vanNuit3">Pour la nuit du 03/07 (5€)</label>
-      <input type="checkbox" id="van3Nuits" name="emplacementVan" value="choixVan3Nuits">
+      <input type="radio" id="van3Nuits" name="emplacementVan" value="choixVan3Nuits">
       <label for="van3Nuits">Pour les 3 nuits (12€)</label>
 
       <h3>Venez-vous avec des enfants ?</h3>

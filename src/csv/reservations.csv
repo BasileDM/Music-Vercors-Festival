@@ -1,3 +1,17 @@
+<<<<<<< HEAD
 Blankenmeister,Sonia,sonia.blankenmeister@gmail.com,+33613794311,Terruedestalingra,1,40,choixJour1,0,0,choixNuit1,aucun
 Blankenmeister,Sonia,sonia.blankenmeister@gmail.com,+33613794311,"49 ter rue de stalingrad",1,45,choixJour1,0,1,choix3Nuits,choixVan3Nuits
 Blankenmeister,Sonia,sonia.blankenmeister@gmail.com,+33613794311,"49 ter rue de stalingrad",1,70,choixJour12,0,0,choixNuit3,aucun
+=======
+Blankenmeister,Sonia,sonia.blankenmeister@gmail.com,+33613794311,Terruedestalingrad,1,40,choixJour1,0,0,aucune,aucun
+Blankenmeister,Sonia,sonia.blankenmeister@gmail.com,+33613794311,Terruedestalingrad,1,64,choixJour1,2,3,choixNuit1,aucun
+Blankenmeister,Sonia,sonia.blankenmeister@gmail.com,+33613794311,Terruedestalingrad,1,40,choixJour1,0,0,aucune,aucun
+Blankenmeister,Sonia,sonia.blankenmeister@gmail.com,+33613794311,Terruedestalingrad,1,70,choixJour12,0,0,aucune,aucun
+Blankenmeister,Sonia,sonia.blankenmeister@gmail.com,+33613794311,Terruedestalingrad,1,40,choixJour1,0,0,aucune,aucun
+Blankenmeister,Sonia,sonia.blankenmeister@gmail.com,+33613794311,Terruedestalingrad,1,40,choixJour1,0,0,choixNuit1,aucun
+Blankenmeister,Sonia,sonia.blankenmeister@gmail.com,+33613794311,Terruedestalingrad,1,40,choixJour1,0,0,aucune,aucun
+Blankenmeister,Sonia,sonia.blankenmeister@gmail.com,+33613794311,Terruedestalingrad,1,40,choixJour1,0,0,aucune,choixVanNuit1
+Jus,Jus,jus@gmail.com,0987654321,Roadtonowhere,1,100,pass3jours,0,0,aucune,aucun
+Jus,Jus,jus@gmail.com,0987654321,Roadtonowhere,1,100,pass3jours,0,0,aucune,aucun
+Jus,Jus,jus@gmail.com,0987654321,"82 road to nowhere",1,100,pass3jours,0,0,aucune,aucun
+>>>>>>> bf8584cccdf7c3a8fd3db5825801814a0efd3bce

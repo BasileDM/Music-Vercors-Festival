@@ -78,31 +78,42 @@ if(isset($_POST['tarifReduit'])) {
 }
 
 // Checking tent cost
-if (isset($_POST['tenteNuit1'])) {
-    $prixTotal += 5;
+if (isset($_POST['emplacementTente'])) {
+    switch ($_POST['emplacementTente']) {
+        case 'choixNuit1':
+            $prixTotal += 5;
+            break;
+        case 'choixNuit2':
+            $prixTotal += 5;
+            break;
+        case 'choixNuit3':
+            $prixTotal += 5;
+            break;
+        case 'choix3Nuits':
+            $prixTotal += 12;
+            break;
+        default:
+            break;
+    }
 }
-if (isset($_POST['tenteNuit2'])) {
-    $prixTotal += 5;
-}
-if (isset($_POST['tenteNuit3'])) {
-    $prixTotal += 5;
-}
-if (isset($_POST['tente3Nuits'])) {
-    $prixTotal += 12;
-}
-
 // Checking van cost
-if (isset($_POST['vanNuit1'])) {
-    $prixTotal += 5;
-}
-if (isset($_POST['vanNuit2'])) {
-    $prixTotal += 5;
-}
-if (isset($_POST['vanNuit3'])) {
-    $prixTotal += 5;
-}
-if (isset($_POST['van3Nuits'])) {
-    $prixTotal += 12;
+if (isset($_POST['emplacementVan'])) {
+    switch ($_POST['emplacementVan']) {
+        case 'choixVanNuit1':
+            $prixTotal += 5;
+            break;
+        case 'choixVanNuit2':
+            $prixTotal += 5;
+            break;
+        case 'choixVanNuit3':
+            $prixTotal += 5;
+            break;
+        case 'choixVan3Nuits':
+            $prixTotal += 12;
+            break;
+        default:
+            break; 
+    }
 }
 
 // Multiplying passes, tents and vans by number of people

@@ -1,11 +1,13 @@
 body {
     background-image:url('images/1a669234843a563b2b6b977034b409f684fbad0c.jpeg');
-    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     font-family: "PT Sans Narrow", sans-serif;
     margin: 0;
     padding: 0;
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 @keyframes animation{
@@ -169,6 +171,7 @@ a {
 
 .bouton:active {
   background-color: white;
+  color:#111;
   outline: 0;
 }
 
@@ -176,3 +179,6 @@ a {
   outline: 0;
 }
 
+#loginForm {
+    margin-left: 5%;
+}
